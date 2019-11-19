@@ -12,7 +12,7 @@
 
     <menu>
         <ul>
-            <li><a href="home">Accueil</a></li>
+            <li><a href="">Accueil</a></li>
             <li><a href="chapter">Chapitres</a></li>
             <li><a href="author">Auteur</a></li>
             <li><a href="contact">Contact</a></li>

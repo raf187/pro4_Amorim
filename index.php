@@ -1,50 +1,14 @@
 <?php
 
-require 'controller/controller.php';
+require  ('controller/router.php');
 
 
-$page = '';
-if (isset($_GET['url'])) {
-    $page = explode('/', $_GET['url']);
-}
+//var_dump($_SERVER);
 
-if ($page == '' || 'home') {
-    home();
+$router = new Router($_SERVER['REQUEST_URI']);
 
-} elseif ($page == 'contact') {
-    contact();
-
-} elseif ($page  == 'chapter') {
-    chapter();
-
-} elseif ($page  == 'author') {
-    author();
-
-} else{
-    echo'Erreur 404';
-
-}
-/*
-switch ($page) {
-    case '':
-        home();
-        break;
-    
-    case 'contact':
-        contact();
-        break;
-
-    case 'chapter':
-        chapter();
-        break;
-
-    case 'author':
-        author();
-        break;
-    
-    default:
-        #http_response_code(404);
-        #require __DIR__. ''
-        echo'Erreur 404';
-        break;
-} */
+$router->get('/', 'FrontController@index');
+$router->get('/author', 'FrontController@author');
+$router->get('/chapter', 'FrontController@chapter');
+$router->get('/contact', 'FrontController@contact');
+$router->match();
