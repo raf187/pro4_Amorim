@@ -1,10 +1,11 @@
 <?php
 
+//require 'vendor/autoload.php';
+require ('Controller/router.php');
 
-require 'vendor/autoload.php';
 
-$router = new App\Router\Router($_SERVER['REQUEST_URI']);
-//var_dump($router);
+$router = new Router($_SERVER['REQUEST_URI']);
+//ar_dump($router);
 $router->get('/pro4/', 'FrontController@index');
 $router->get('/pro4/author', 'FrontController@author');
 $router->get('/pro4/chapter', 'FrontController@chapter');

@@ -12,10 +12,10 @@
 
     <menu>
         <ul>
-            <li><a href="">Accueil</a></li>
-            <li><a href="chapter">Chapitres</a></li>
-            <li><a href="author">Auteur</a></li>
-            <li><a href="contact">Contact</a></li>
+            <li><a href="/pro4/">Accueil</a></li>
+            <li><a href="/pro4/chapter">Chapitres</a></li>
+            <li><a href="/pro4/author">Auteur</a></li>
+            <li><a href="/pro4/contact">Contact</a></li>
         </ul>
         <p>Menu</p>    
     </menu>
