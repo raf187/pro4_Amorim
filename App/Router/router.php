@@ -1,17 +1,18 @@
 <?php
-require ('controller.php');
+
+namespace App\Router;
 
 class Router{
-    private $routes = [];
-    private $url;
+    public $routes = [];
+    public $url;
 
-    public function __construct(string $url){
+    public function __construct($url){
 
         $this->url = $url;
-
+        
     }
 
-    public function get(string $path, string $action){
+    public function get($path, $action){
 
         $this->routes['GET'][$path] = $action;
     }
@@ -21,19 +22,18 @@ class Router{
         foreach ($this->routes as $key => $routes) {
             foreach ($routes as $path => $action) {
                 if ($this->url === $path) {
-                    //probleme
                     $elements = explode('@', $action);
-                    $this->callController($elements);
- 
+                    $this->runController($elements);
                 }
             }
             header('HTTP/1.0 404 Not Found');
         }
     }
-    private function callController(array $elements){
-        $className = 'controller.php'. $elements[0];
+    private function runController(array $elements){
+        $theClass = 'App\\Controller\\' . $elements[0];
+        var_dump($theClass);
         $method = $elements[1];
-        $controller = new $className();
-        $controller->$method();
+        $control = new $theClass;
+        $control->$method();
     }
 }

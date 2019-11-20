@@ -1,23 +1,29 @@
 <?php
+
+namespace App\Controller;
 //require 'model/model.php';
 
 class FrontController{
 
     public function index(){
-
+        //require '../view/frontend/index.php';
         echo 'index';
     }
 
     public function author(){
-        echo 'author';
+        //require '../view/frontend/author.php';
+        echo 'au';
     }
 
     public function chapter(){
-        echo 'chapter';
+        echo 'ch';
+       // $req = getChapter();
+        //require '../view/frontend/chapter.php';
     }
 
     public function contact(){
-        echo 'contact';
+        echo 'c';
+        //require '../view/frontend/contact.php';
     }
 
 }
