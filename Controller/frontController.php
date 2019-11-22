@@ -1,7 +1,8 @@
 <?php
 
 //namespace Control;
-require 'model/model.php';
+require ('model/database.php');
+require ('model/model.php');
 
 class FrontController{
 
@@ -16,7 +17,8 @@ class FrontController{
     }
 
     public function chapter(){
-        $req = getChapter();
+        $dataBase = new Read();
+        $sql = $dataBase->readChapter();
         require './view/frontend/chapter.php';
 
     }

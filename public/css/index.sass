@@ -1,9 +1,11 @@
-$bluemenu: #84A1E9
+$bluemenu: #0C72FF
     
 *
     padding: 0
     margin: 0
 html
+    height: 100%
+body
     background-image: url('../img/oneway.jpg')
     background-size: cover
     background-position: center
@@ -15,39 +17,38 @@ header h1
     padding: 10px
     text-align: center
 menu
-    transform: translateY(-54px)
+    transform: translateY(-40px)
     background-color: rgba(0,0 ,0 ,.2 )
     &:hover
         transform: translateY(0)
 menu p
-    font-size: 22px
+    font-size: 24px
     font-weight: bold
     display: flex
     justify-content: center
-    color: #fff
+    color: $bluemenu
     padding: 10px
 ul
     display: flex
     justify-content: center
     color: #fff
-    padding: 20px
+    padding-top: 15px
     li
-        margin: 0 30px
+        margin: 0 20px
         list-style: none
+        font-size: 22px
+        &:focus, &:hover
+            transform:  translateY(-5px)
         a
             text-decoration: none
             color: #fff
-            &:hover
+            font-weight: bold
+            &:focus, &:hover
                 color: $bluemenu
-                border-bottom: 2px solid $bluemenu
-                border-top: 2px solid $bluemenu
-                font-weight: bold
+                border-bottom: 4px solid $bluemenu
 .homePage
     width: 50%
-    position: absolute
-    top: 55%
-    left: 50%
-    transform: translate(-50%,-50%)
+    margin: 100px auto
     background-color: rgba(255, 255, 255, .8)
     box-shadow: 0 0 10px #000
     border-radius: 20px
@@ -58,72 +59,63 @@ ul
     h2
         padding-bottom: 50px
 .liens
-    position: absolute
     display: flex
-    left: 50%
-    transform: translate(-50%)
-    bottom: 70px
+    width: 50%
+    margin: 120px auto
     color: #fff
     text-shadow: 0 0 5px #000
     div
         margin: 40px 80px
         text-align: center
-        &:hover
-            color: $bluemenu
     i
         font-size: 50px
         padding: 10px
-footer 
-    position: relative
-    margin-bottom: 0
-    color: #fff
-    p
-    text-align: center
-    font-size: 18px
-    padding: 8px
-    background-color: rgba(0,0 ,0 ,.2 )
     a
         text-decoration: none
-        color: $bluemenu
-.box
-    width: 400px
-    padding: 50px
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%,-50%)
-    text-align: center
-    background-color: rgba(255, 255, 255, .8)
-    border-radius: 20px
-    box-shadow: 0 0 10px #000
-.text, .password
-    display: block
-    border: 0
-    margin: 20px auto
-    text-align: center
-    border: 2px solid #43464F
-    border-radius: 20px
-    padding: 12px 8px;
-    width: 200px
-    .text:focus, .password:focus
-        border-radius: 20px
-        width: 300px
-        border-color: $bluemenu
-.submit
-    display: block
-    border: 0
-    margin: 20px auto
-    text-align: center
-    border: 2px solid #43464F
-    border-radius: 20px
-    padding: 12px 40px
-    cursor: pointer
-    &:hover
-        background-color: $bluemenu
-        border-color: $bluemenu
         color: #fff
-.signature
-    color: blue
+        &:hover
+            color: $bluemenu
+
+            //sass pour acces admin
+// .box
+//     width: 400px
+//     padding: 50px
+//     position: absolute
+//     top: 50%
+//     left: 50%
+//     transform: translate(-50%,-50%)
+//     text-align: center
+//     background-color: rgba(255, 255, 255, .8)
+//     border-radius: 20px
+//     box-shadow: 0 0 10px #000
+// .text, .password
+//     display: block
+//     border: 0
+//     margin: 20px auto
+//     text-align: center
+//     border: 2px solid #43464F
+//     border-radius: 20px
+//     padding: 12px 8px;
+//     width: 200px
+//     .text:focus, .password:focus
+//         border-radius: 20px
+//         width: 300px
+//         border-color: $bluemenu
+// .submit
+//     display: block
+//     border: 0
+//     margin: 20px auto
+//     text-align: center
+//     border: 2px solid #43464F
+//     border-radius: 20px
+//     padding: 12px 40px
+//     cursor: pointer
+//     &:hover
+//         background-color: $bluemenu
+//         border-color: $bluemenu
+//         color: #fff
+// .signature
+//     color: blue
 .chapter
     width: 80%
     background-color: rgba(255, 255, 255, .7)
@@ -131,6 +123,19 @@ footer
     padding: 20px
     text-align: center
     border-radius: 10px
-.chapterH1
+.titleH1
     text-align: center
     margin: 15px
+
+footer
+    height: 30p
+    color: #fff
+    background-color: rgba(0,0 ,0 ,.2 )
+    p
+    line-height: 30px
+    padding: 4px
+    text-align: center
+    font-size:  22px
+    a
+        text-decoration: none
+        color: $bluemenu

@@ -4,6 +4,10 @@
 }
 
 html {
+  height: 100%;
+}
+
+body {
   background-image: url("../img/oneway.jpg");
   background-size: cover;
   background-position: center;
@@ -19,8 +23,8 @@ header h1 {
 }
 
 menu {
-  -webkit-transform: translateY(-54px);
-          transform: translateY(-54px);
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -30,7 +34,7 @@ menu:hover {
 }
 
 menu p {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,7 +42,7 @@ menu p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #fff;
+  color: #0C72FF;
   padding: 10px;
 }
 
@@ -50,33 +54,34 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   color: #fff;
-  padding: 20px;
+  padding-top: 15px;
 }
 
 ul li {
-  margin: 0 30px;
+  margin: 0 20px;
   list-style: none;
+  font-size: 22px;
+}
+
+ul li:focus, ul li:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 ul li a {
   text-decoration: none;
   color: #fff;
+  font-weight: bold;
 }
 
-ul li a:hover {
-  color: #84A1E9;
-  border-bottom: 2px solid #84A1E9;
-  border-top: 2px solid #84A1E9;
-  font-weight: bold;
+ul li a:focus, ul li a:hover {
+  color: #0C72FF;
+  border-bottom: 4px solid #0C72FF;
 }
 
 .homePage {
   width: 50%;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  margin: 100px auto;
   background-color: rgba(255, 255, 255, 0.8);
   -webkit-box-shadow: 0 0 10px #000;
           box-shadow: 0 0 10px #000;
@@ -94,14 +99,11 @@ ul li a:hover {
 }
 
 .liens {
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  bottom: 70px;
+  width: 50%;
+  margin: 120px auto;
   color: #fff;
   text-shadow: 0 0 5px #000;
 }
@@ -111,81 +113,18 @@ ul li a:hover {
   text-align: center;
 }
 
-.liens div:hover {
-  color: #84A1E9;
-}
-
 .liens i {
   font-size: 50px;
   padding: 10px;
 }
 
-footer {
-  position: relative;
-  margin-bottom: 0;
-  color: #fff;
-  text-align: center;
-  font-size: 18px;
-  padding: 8px;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-footer a {
+.liens a {
   text-decoration: none;
-  color: #84A1E9;
-}
-
-.box {
-  width: 400px;
-  padding: 50px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  -webkit-box-shadow: 0 0 10px #000;
-          box-shadow: 0 0 10px #000;
-}
-
-.text, .password {
-  display: block;
-  border: 0;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #43464F;
-  border-radius: 20px;
-  padding: 12px 8px;
-  width: 200px;
-}
-
-.text .text:focus, .text .password:focus, .password .text:focus, .password .password:focus {
-  border-radius: 20px;
-  width: 300px;
-  border-color: #84A1E9;
-}
-
-.submit {
-  display: block;
-  border: 0;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #43464F;
-  border-radius: 20px;
-  padding: 12px 40px;
-  cursor: pointer;
-}
-
-.submit:hover {
-  background-color: #84A1E9;
-  border-color: #84A1E9;
   color: #fff;
 }
 
-.signature {
-  color: blue;
+.liens a:hover {
+  color: #0C72FF;
 }
 
 .chapter {
@@ -197,8 +136,23 @@ footer a {
   border-radius: 10px;
 }
 
-.chapterH1 {
+.titleH1 {
   text-align: center;
   margin: 15px;
+}
+
+footer {
+  height: 30p;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+  line-height: 30px;
+  padding: 4px;
+  text-align: center;
+  font-size: 22px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #0C72FF;
 }
 /*# sourceMappingURL=index.css.map */

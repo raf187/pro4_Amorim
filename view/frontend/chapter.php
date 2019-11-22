@@ -1,9 +1,9 @@
 <?php $title = ('Billet simple pour l\'Alaska - Chapitre'); ?>
 <?php ob_start(); ?>
 
-<h1 class="chapterH1">Les chapitres</h1>
-<?php 
-while ($data = $req->fetch())
+<h1 class="titleH1">Les chapitres</h1>
+<?php
+while ($data = $sql->fetch())
 {
 ?>
 <div class="chapter">
@@ -15,12 +15,12 @@ while ($data = $req->fetch())
     </p>
     <br>
     <p class="signature">
-    <?php echo htmlspecialchars('Par ' . $data['pseudo'] . ' le ' . $data['date']); ?>
+    <?php echo htmlspecialchars('Par ' . $data['pseudo'] . ' le ' . $data['la_date']); ?>
     </p>
 </div><br>
 <?php
 }
-$req->closeCursor();
+$sql->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 <?php require 'template.php'; ?>
