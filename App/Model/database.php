@@ -1,4 +1,7 @@
-<?php
+<?php 
+namespace App\Model;
+use \PDO;
+
 
 class DataBase{
     private $host;
@@ -16,7 +19,7 @@ class DataBase{
 
         try {
             $dsn = "mysql:host=".$this->host.";dbname=".$this->dbName.";charset=".$this->charset;
-            $db = new PDO($dsn, $this->user, $this->passW);
+            $db = new \PDO($dsn, $this->user, $this->passW);
             return $db;
         } 
         catch (PDOException $e) {

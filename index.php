@@ -1,13 +1,13 @@
 <?php
+require 'vendor/autoload.php';
 
-//require 'vendor/autoload.php';
-require ('Controller/router.php');
+$router = new App\Router\Router($_GET['url']);
 
+$router->get('/', 'FrontController@index');
+$router->get('/author', 'FrontController@author');
+$router->get('/chapter', 'FrontController@chapter');
+$router->get('/contact', 'FrontController@contact');
+$router->get( '/chapterRead/:id' , 'FrontController@chapterRead')->with('id', '[0-9]+');
+//$router->post( '/pro4/chapter/:id' , 'FrontController@chapterRead');
 
-$router = new Router($_SERVER['REQUEST_URI']);
-
-$router->get('/pro4/', 'FrontController@index');
-$router->get('/pro4/author', 'FrontController@author');
-$router->get('/pro4/chapter', 'FrontController@chapter');
-$router->get('/pro4/contact', 'FrontController@contact');
 $router->match();

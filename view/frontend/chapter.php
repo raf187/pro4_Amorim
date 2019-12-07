@@ -14,6 +14,7 @@ while ($data = $sql->fetch())
     <?php echo htmlspecialchars($data['contenu']); ?>
     </p>
     <br>
+    <button><a href="/pro4/chapterRead/<?= $data['id'] ?>">Lecture</a></button><br>
     <p class="signature">
     <?php echo htmlspecialchars('Par ' . $data['pseudo'] . ' le ' . $data['la_date']); ?>
     </p>
@@ -22,5 +23,6 @@ while ($data = $sql->fetch())
 }
 $sql->closeCursor();
 ?>
-<?php $content = ob_get_clean(); ?>
-<?php require 'template.php'; ?>
+<?php $content = ob_get_clean();
+    require_once 'template.php';
+?>

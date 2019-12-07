@@ -1,14 +1,12 @@
 <?php
-
-//namespace Control;
-require ('model/database.php');
-require ('model/model.php');
+namespace App\Controller;
+use App\Model\Read;
 
 class FrontController{
 
     public function index(){
         require './view/frontend/index.php';
-        
+
     }
 
     public function author(){
@@ -17,21 +15,21 @@ class FrontController{
     }
 
     public function chapter(){
-        $dataBase = new Read();
-        $sql = $dataBase->readChapter();
+        $bdd = new Read();
+        $sql = $bdd->chapterIndex();
         require './view/frontend/chapter.php';
 
     }
 
     public function contact(){
         require './view/frontend/contact.php';
-        
+
     }
 
+    public function chapterRead($id){
+        $bdd = new Read();
+        $sql = $bdd->readChapter($id);
+        require './view/frontend/chapterRead.php';
+
+    }
 }
-
-
-
-
-
-

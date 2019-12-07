@@ -1,14 +1,19 @@
-<?php
+<?php namespace App\Model;
 
 
 class Read extends DataBase{
 
-    public function readChapter(){
+    public function chapterIndex(){
         $db = $this->connect();
-        $req = $db->query("SELECT titre,pseudo,la_date,SUBSTRING(contenu,1,500) AS contenu FROM articles");
+        $req = $db->query("SELECT id,titre,pseudo,la_date,SUBSTRING(contenu,1,500) AS contenu FROM articles");
         return $req;
     }
-
+    public function readChapter($id){
+        $db = $this->connect();
+        $reqId = $db->prepare('SELECT * FROM articles WHERE id = ?');
+        $reqId = $id; 
+        return $reqId;
+    }
 
 
 
