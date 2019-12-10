@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/2c4122a5e2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./public/css/index.css">
+    <link rel="stylesheet" href="../public/css/index.css">
     <title><?= $title ?></title>
 </head>
 <body>

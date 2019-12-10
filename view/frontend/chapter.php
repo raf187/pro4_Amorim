@@ -1,4 +1,4 @@
-<?php $title = ('Billet simple pour l\'Alaska - Chapitre'); ?>
+<?php $title = ('Les chapitres'); ?>
 <?php ob_start(); ?>
 
 <h1 class="titleH1">Les chapitres</h1>
@@ -8,21 +8,20 @@ while ($data = $sql->fetch())
 ?>
 <div class="chapter">
     <h3>
-    <?php echo htmlspecialchars($data['titre']); ?> <br>
+    <?= $data['titre']; ?> <br>
     </h3><br>
     <p class="contenu">
-    <?php echo htmlspecialchars($data['contenu']); ?>
+    <?= $data['contenu'] . '...'; ?>
     </p>
     <br>
     <button><a href="/pro4/chapterRead/<?= $data['id'] ?>">Lecture</a></button><br>
     <p class="signature">
-    <?php echo htmlspecialchars('Par ' . $data['pseudo'] . ' le ' . $data['la_date']); ?>
+    <?= 'Par ' . $data['pseudo'] . ' le ' . $data['la_date']; ?>
     </p>
 </div><br>
 <?php
 }
 $sql->closeCursor();
-?>
-<?php $content = ob_get_clean();
-    require_once 'template.php';
+$content = ob_get_clean();
+require 'template.php';
 ?>

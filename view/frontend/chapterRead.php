@@ -1,12 +1,10 @@
-<?php $title = ('Billet simple pour l\'Alaska - Chapitre');
+<?php $title = ('Chapitre' . $id); ?>
+<?php ob_start(); ?>
 
-if (isset($id) AND !empty($id)) {
-    $getId = htmlspecialchars($id);
-    echo ($getId);
-
-    $data = $reqId->execute(([$getId]));
-    if ($data->rowCount() == 1) {
-        $data = $data->fetch();
+<?php
+if(isset($id)) {
+   if($sql->rowCount() == 1) {
+        $data = $sql->fetch();
         $titre = $data['titre'];
         $contenu = $data['contenu'];
         $la_date = $data['la_date'];
@@ -18,8 +16,6 @@ if (isset($id) AND !empty($id)) {
     die('Erreur');
 }
 ?>
-<?php ob_start(); ?>
-<?php while ($a = $sql->fetch()) { ?>
 
 <div class="chapter">
     <h3>
@@ -34,8 +30,7 @@ if (isset($id) AND !empty($id)) {
     </p>
 </div><br>
 <?php
-}
 $sql->closeCursor();
+$content = ob_get_clean();
+require 'template.php';
 ?>
-<?php $content = ob_get_clean(); ?>
-<?php require 'template.php'; ?>

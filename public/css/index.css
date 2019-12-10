@@ -29,8 +29,8 @@ menu {
 }
 
 menu:hover {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: ease-in-out translateY(0);
+          transform: ease-in-out translateY(0);
 }
 
 menu p {
@@ -80,7 +80,7 @@ ul li a:focus, ul li a:hover {
 }
 
 .homePage {
-  width: 50%;
+  width: 60%;
   margin: 100px auto;
   background-color: rgba(255, 255, 255, 0.8);
   -webkit-box-shadow: 0 0 10px #000;
@@ -128,7 +128,7 @@ ul li a:focus, ul li a:hover {
 }
 
 .chapter {
-  width: 80%;
+  width: 70%;
   background-color: rgba(255, 255, 255, 0.7);
   margin: auto;
   padding: 20px;
