@@ -29,8 +29,8 @@ menu {
 }
 
 menu:hover {
-  -webkit-transform: ease-in-out translateY(0);
-          transform: ease-in-out translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 menu p {
@@ -125,6 +125,59 @@ ul li a:focus, ul li a:hover {
 
 .liens a:hover {
   color: #0C72FF;
+}
+
+.box {
+  width: 400px;
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #000;
+}
+
+.text, .password {
+  display: block;
+  border: 0;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #43464F;
+  border-radius: 20px;
+  padding: 12px 8px;
+  width: 200px;
+}
+
+.text .text:focus, .text .password:focus, .password .text:focus, .password .password:focus {
+  border-radius: 20px;
+  width: 300px;
+  border-color: #0C72FF;
+}
+
+.submit {
+  display: block;
+  border: 0;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #43464F;
+  border-radius: 20px;
+  padding: 12px 40px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #0C72FF;
+  border-color: #0C72FF;
+  color: #fff;
+}
+
+.signature {
+  color: blue;
 }
 
 .chapter {

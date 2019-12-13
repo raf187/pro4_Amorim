@@ -10,10 +10,9 @@ class Read extends DataBase{
     }
     public function readChapter($id){
         $db = $this->connect();
-        $reqId = $db->query('SELECT * FROM articles WHERE id='.$id.'');
+        $reqId = $db->query("SELECT * FROM articles WHERE id= $id");
         return $reqId;
     }
-
 
 
     // public $connection;

@@ -9,25 +9,17 @@
     <link rel="stylesheet" href="../public/css/index.css">
     <title><?= $title ?></title>
 </head>
-<body>
-        <menu>
-            <ul>
-                <li><a href="/pro4/">Accueil</a></li>
-                <li><a href="/pro4/chapitre">Chapitres</a></li>
-                <li><a href="/pro4/auteur">Auteur</a></li>
-                <li><a href="/pro4/contact">Contact</a></li>
-            </ul>
-            <p>Menu</p>    
-        </menu>
-
+    <body>
         <header>    
             <h1>Billet simple pour l'Alaska</h1>
         </header>
+        
         <div class="phpContent">
         <?= $content ?>
         </div>
+
         <footer>
             <p>Ce site et un projet etudiant de <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>.</p>
         </footer>
-</body>
+    </body>
 </html>

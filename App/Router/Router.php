@@ -16,17 +16,14 @@ class Router{
         $route = new Route($path, $action);
         $this->routes['GET'][] = $route;
         return $route;
-        // echo('<pre>');
-        // print_r($route);
-        // echo('</pre>');
     }
 
-    // public function post($path, $action){
+    public function post($path, $action){
 
-    //     $route = new Route($path, $action);
-    //     $this->routes['POST'][] = $route;
-        
-    // }
+        $route = new Route($path, $action);
+        $this->routes['POST'][] = $route;
+        return $route;
+    }
 
     public function match(){
         // echo('<pre>');
