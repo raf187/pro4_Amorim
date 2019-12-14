@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  background-color: #EBEEED;
+}
+
+header {
+  color: #fff;
+  text-align: center;
+  background: #92aca1;
+  padding: 20px;
+}
+
+span {
+  width: 100%;
+  border-bottom: soloid 5px #fff;
+}
+
+menu {
+  left: 0;
+  height: 100vh;
+  width: 18%;
+  background: #92aca1;
+  text-align: center;
+}
+
+menu ul {
+  padding: 50px auto;
+  width: 100%;
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+menu li {
+  list-style: none;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+menu a {
+  text-decoration: none;
+  color: #fff;
+  margin-top: 30px;
+}
+
+menu a:hover {
+  color: blue;
+  border-bottom: solid 3px;
+}
+
+.contMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.phpContent {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.phpContent h1 {
+  padding: 40p;
+}
+
+.phpContent th {
+  padding: 200px;
+}
+
+footer {
+  padding-top: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+  line-height: 30px;
+  padding: 4px;
+  text-align: center;
+  font-size: 22px;
+}
+
+footer a {
+  text-decoration: none;
+  color: blue;
+}
+/*# sourceMappingURL=indexBack.css.map */

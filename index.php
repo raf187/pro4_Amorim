@@ -12,6 +12,10 @@ $router->get( '/chapitre-numero/:id' , 'FrontController@chapterRead')->with('id'
 
 $router->get('/login', 'BackController@log');
 $router->post('/login', 'BackController@log');
+$router->get('/admin', 'BackController@index');
+$router->get('/chapitres-admin', 'BackController@chapterAdmin');
+$router->get('/comentaires-admin', 'BackController@comAdmin');
+$router->get('/ajouter-admin', 'BackController@addAdmin');
 //$router->post( '/pro4/chapter/:id' , 'FrontController@chapterRead');
 
 $router->match();

@@ -1,12 +1,9 @@
 <?php $title = ('Connection Admin'); ?>
 
-<?php
-
-?>
 
 <?php ob_start(); ?>
 
-<form class="box" method="POST" action="#">
+<form class="box" method="POST" action="">
     <h1>LOGIN</h1>
     <input class="text" type="text" name="pseudo" placeholder="Pseudo" required>
     <input class="password" type="password" name="mdp" placeholder="Mot de passe" required>
@@ -14,5 +11,5 @@
     <!-- <p><?= $message ?></p> -->
 </form>
 <?php $content = ob_get_clean();
-require 'templateBack.php';
+require 'view/frontend/template.php';
 ?>

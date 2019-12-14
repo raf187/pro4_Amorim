@@ -14,6 +14,12 @@ class Read extends DataBase{
         return $reqId;
     }
 
+    public function getAmin(){
+        $db = $this->connect();
+        $reqId = $db->query("SELECT * FROM utilisateur");
+        return $reqId;
+    }
+
 
     // public $connection;
 

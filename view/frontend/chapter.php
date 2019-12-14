@@ -14,7 +14,7 @@ while ($data = $sql->fetch())
     <?= $data['contenu'] . '...'; ?>
     </p>
     <br>
-    <button><a href="/pro4/chapitre-numero/<?= $data['id'] ?>">Lecture</a></button><br>
+    <button type="button" class="btn btn-info"><a href="/pro4/chapitre-numero/<?= $data['id'] ?>">Lecture</a></button><br>
     <p class="signature">
     <?= 'Par ' . $data['pseudo'] . ' le ' . $data['la_date']; ?>
     </p>

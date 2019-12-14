@@ -23,8 +23,8 @@ header h1 {
 }
 
 menu {
-  -webkit-transform: translateY(-40px);
-          transform: translateY(-40px);
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -54,7 +54,7 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   color: #fff;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 ul li {
@@ -63,18 +63,13 @@ ul li {
   font-size: 22px;
 }
 
-ul li:focus, ul li:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
-}
-
 ul li a {
-  text-decoration: none;
   color: #fff;
   font-weight: bold;
 }
 
 ul li a:focus, ul li a:hover {
+  text-decoration: none;
   color: #0C72FF;
   border-bottom: 4px solid #0C72FF;
 }
@@ -177,7 +172,7 @@ ul li a:focus, ul li a:hover {
 }
 
 .signature {
-  color: blue;
+  margin: 10px;
 }
 
 .chapter {
@@ -189,13 +184,52 @@ ul li a:focus, ul li a:hover {
   border-radius: 10px;
 }
 
+.chapter a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .titleH1 {
   text-align: center;
-  margin: 15px;
+  padding: 15px;
+}
+
+form {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+form #comentaire {
+  height: 100px;
+}
+
+form label, form legend {
+  color: #fff;
+}
+
+#btnAjout {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.coms {
+  color: #fff;
+  text-align: center;
+  margin: 10px;
+}
+
+.comentaire {
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px auto;
 }
 
 footer {
-  height: 30p;
+  padding-top: 20px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.2);
   line-height: 30px;

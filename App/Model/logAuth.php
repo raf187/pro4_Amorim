@@ -1,11 +1,11 @@
 <?php namespace App\Model;
+use App\Controller\BackController;
 
 class LogAuth extends DataBase{
-
-    public $db;
+    
     public $user;
     public $pass;
-
+    public $message;
 
 
     public function userAuth(){
@@ -27,13 +27,17 @@ class LogAuth extends DataBase{
                 if ($sql->rowCount() >= 1) {
                     $data = $sql->fetch();
                     $_SESSION['id'] = $data['id'];
-                    echo('salut');
+                    if (!empty($_SESSION['id'])) {
+                        header('location:admin');
+                    }else {
+                        echo('Vous etes pas connectée');
+                    }
                 }else{
-                    echo('Pseudo ou mot de passe sont incorrect!');
+                    echo 'Pseudo ou mot de passe sont incorrect!';
                     
                 }
             }else {
-                echo 'Entrez votre pseudo et mot de passe!';
+                echo  'Entrez votre pseudo et mot de passe!';
             }
         }
     }
