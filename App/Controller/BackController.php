@@ -31,7 +31,7 @@ class BackController{
 
     public function addAdmin(){
         $bdd = new Read();
-        $sql = $bdd->getAmin();
+        $sql = $bdd->getAdmin();
         require './view/backend/authAdmin.php';
     }
 }

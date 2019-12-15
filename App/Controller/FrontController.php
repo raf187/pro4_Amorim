@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Model\Read;
+use App\Model\Post;
 
 class FrontController{
 
@@ -29,7 +30,12 @@ class FrontController{
     public function chapterRead($id){
         $bdd = new Read();
         $sql = $bdd->readChapter($id);
+        $coms = $bdd->getComs($id);
         require './view/frontend/chapterRead.php';
+    }
 
+    public function comentPost($id_article){
+        $bdd = new Post();
+        $insert = $bdd->comPost($id_article);
     }
 }

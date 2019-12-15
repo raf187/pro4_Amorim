@@ -3,7 +3,7 @@
   margin: 0;
 }
 
-body, html {
+body {
   background-color: #EBEEED;
 }
 
@@ -14,14 +14,8 @@ header {
   padding: 20px;
 }
 
-span {
-  width: 100%;
-  border-bottom: soloid 5px #fff;
-}
-
 menu {
   left: 0;
-  height: 100vh;
   width: 18%;
   background: #92aca1;
   text-align: center;
@@ -58,25 +52,24 @@ menu a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
 }
 
 .phpContent {
   text-align: center;
-  margin: 50px auto;
+  margin: 10px auto;
+  width: 80%;
+  height: 100%;
 }
 
 .phpContent h1 {
-  padding: 40p;
-}
-
-.phpContent th {
-  padding: 200px;
+  padding: 40px;
 }
 
 footer {
   padding-top: 20px;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #92aca1;
   line-height: 30px;
   padding: 4px;
   text-align: center;

@@ -10,16 +10,23 @@ class Read extends DataBase{
     }
     public function readChapter($id){
         $db = $this->connect();
-        $reqId = $db->query("SELECT * FROM articles WHERE id= $id");
+        $reqId = $db->prepare("SELECT * FROM articles WHERE id= :id");
+        $reqId->execute([':id' => $id]);
         return $reqId;
     }
 
-    public function getAmin(){
+    public function getAdmin(){
         $db = $this->connect();
         $reqId = $db->query("SELECT * FROM utilisateur");
         return $reqId;
     }
 
+    public function getComs($id){
+        $db = $this->connect();
+        $reqComs = $db->prepare("SELECT * FROM comentaires WHERE id_article= :id_article ORDER BY la_date DESC");
+        $reqComs->execute([':id_article' => $id]);
+        return  $reqComs;
+    }
 
     // public $connection;
 

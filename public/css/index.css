@@ -228,6 +228,18 @@ form label, form legend {
   margin: 20px auto;
 }
 
+.signComs {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: solid 1px #fff;
+  padding-top: 15px;
+}
+
+.signComs .btn {
+  padding: 2px;
+}
+
 footer {
   padding-top: 20px;
   color: #fff;
