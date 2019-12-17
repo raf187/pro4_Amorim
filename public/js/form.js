@@ -1,27 +1,45 @@
-class FormCom{
+class Form{
     constructor(){
-        this.btnAjout = document.getElementById("btnAjout");
-        this.formComs = document.getElementById("formCom");
-        this.sendBtn = document.getElementById("envoyer");
+        this.btnAjout = document.querySelector("#btnAjout");
+        this.formComs = document.querySelector("#formCom");
+        this.sendBtn = document.querySelector("#envoyer");
+        this.ajoutAdmin = document.querySelector("#ajoutAdmin");
+        this.formAdmin = document.querySelector("#formAmin");
+        this.btnAddAdmin = document.querySelector("#btnAddAdmin");
 
-        this.btnAjout.addEventListener("click", this.addForm.bind(this));
-        this.sendBtn.addEventListener("click", this.removeForm.bind(this));
+        this.btnAjout.addEventListener("click", this.addComentForm.bind(this));
+        this.sendBtn.addEventListener("click", this.removeComentForm.bind(this));
+
+        this.btnAjout.addEventListener("click", this.addAdminForm.bind(this));
+        this.sendBtn.addEventListener("click", this.removeAdminForm.bind(this));
     }
 
-    addForm(){
+    addComentForm(){
         $("#btnAjout").click(() => {
             $("#btnAjout").addClass('d-none');
             $("#formCom").removeClass('d-none');
         })
     }
-    removeForm(){
+    removeComentForm(){
         $("#envoyer").click(() => {
             $("#btnAjout").removeClass('d-none');
             $("#formCom").addClass('d-none');
+        })
+    }
+    addAdminForm(){
+        $("#ajoutAdmin").click(() => {
+            $("#ajoutAdmin").addClass('d-none');
+            $("#formAmin").removeClass('d-none');
+        })
+    }
+    removeAdminForm(){
+        $("#btnAddAdmin").click(() => {
+            $("#btnAddAdmin").removeClass('d-none');
+            $("#formAmin").addClass('d-none');
         })
     }
 
     
 }
 
-new FormCom();
+new Form();

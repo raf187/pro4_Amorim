@@ -66,6 +66,10 @@ menu a:hover {
   padding: 40px;
 }
 
+.phpContent legend {
+  margin: 30px;
+}
+
 footer {
   padding-top: 20px;
   color: #fff;

@@ -7,6 +7,8 @@
     <script src="https://kit.fontawesome.com/2c4122a5e2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/bnbduad1phrfj1pd2rzog44qm13pvuu41gh4j1qmomm7k0j1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'.textchapter'});</script>
     <link rel="stylesheet" href="./public/css/indexback.css">
     <link rel="stylesheet" href="../public/css/indexback.css">
     <title><?= $title ?></title>
@@ -20,6 +22,7 @@
         <div class="contMenu">
             <menu>
                 <ul>
+                <li><a href="/pro4/nouveau-chapitre">Nouveau Chapitre</a></li>
                 <li><a href="/pro4/chapitres-admin">Les Chapitres</a></li>
                 <li><a href="/pro4/comentaires-admin">Comentaires</a></li>
                 <li><a href="/pro4/ajouter-admin">Ajout de admin</a></li>

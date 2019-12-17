@@ -31,5 +31,9 @@
         <footer>
             <p>Ce site et un projet etudiant de <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>.</p>
         </footer>
+
+
+<script src="../public/js/form.js"></script>
+<script src="../public/js/formAdmin.js"></script>
 </body>
 </html>

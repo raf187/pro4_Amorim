@@ -1,5 +1,4 @@
 <?php namespace App\Model;
-use App\Controller\BackController;
 
 class LogAuth extends DataBase{
     
@@ -50,6 +49,50 @@ class LogAuth extends DataBase{
 
 
 
+
+
+
+
+
+
+
+
+
+    public function updateAdmin($id){
+        $con = $this->connect();
+        if (isset($_POST['modAdmin'])) {
+            if (!empty($_POST['pseudo']) && !empty($_POST['mdp']) && !empty($_POST['email'])) {
+                $update = $con->prepare("UPDATE utilisateur SET pseudo = :pseudo, mot_de_passe = :mot_de_passe, email = :email WHERE id = :id ");
+                $update->execute([':pseudo' => $_POST['pseudo'], ':mot_de_passe' => $_POST['mdp'], ':email' => $_POST['email'],':id' => $id]);
+                header('location:/pro4/ajouter-admin');
+            } else {
+                echo 'error';
+            }
+        }
+    }
+
+    public function getAdminUpdate($id){
+        $db = $this->connect();
+        $req = $db->prepare("SELECT * FROM utilisateur WHERE id= :id");
+        $req->execute([':id' => $id]);
+        return $req;
+    }
+
+    public function addAdmin(){
+        $con = $this->connect();
+        if (isset($_POST['btnAddAdmin'])) {
+            if (!empty($_POST['pseudo']) AND !empty($_POST['mdp']) AND !empty($_POST['email'])) {
+                $pseudo = htmlspecialchars($_POST['pseudo']);
+                $mdp = htmlspecialchars($_POST['mdp']);
+                $email = htmlspecialchars($_POST['email']);
+                $insert = $con->prepare("INSERT INTO utilisateur (pseudo, mot_de_passe, email) VALUES (:pseudo, :mdp, :email)");
+                $insert->execute([':pseudo'=>$pseudo, ':mdp'=>$mdp, ':email'=>$email]);
+                header("location:ajouter-admin");
+            } else {
+                echo 'Veuillez remplir tous les champs';
+            }
+        }
+    }
 
 
 

@@ -37,5 +37,8 @@ class FrontController{
     public function comentPost($id_article){
         $bdd = new Post();
         $insert = $bdd->comPost($id_article);
+        $addSignal = $bdd->signalCom();
     }
+
+
 }
