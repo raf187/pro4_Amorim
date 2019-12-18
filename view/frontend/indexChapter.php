@@ -3,7 +3,7 @@
 
 <h1 class="titleH1">Les chapitres</h1>
 <?php
-while ($data = $sql->fetch())
+while ($data = $index->fetch())
 {
 ?>
 <div class="chapter">
@@ -21,7 +21,7 @@ while ($data = $sql->fetch())
 </div><br>
 <?php
 }
-$sql->closeCursor();
+$index->closeCursor();
 $content = ob_get_clean();
 require 'template.php';
 ?>

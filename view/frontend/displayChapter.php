@@ -3,8 +3,8 @@
 
 <?php
 if(isset($id)) {
-    if($sql->rowCount() == 1) {
-        $data = $sql->fetch();
+    if($display->rowCount() == 1) {
+        $data = $display->fetch();
     } else {
         die('Cet article n\'existe pas !');
     }
@@ -26,12 +26,9 @@ if(isset($id)) {
     </p>
 </div><br>
 <?php
-$sql->closeCursor();?>
+$display->closeCursor();?>
 
-<!-- <a href="#formCom">--><button id="btnAjout" type="button" class="col-md-4 offset-md-4 btn btn-success">Ajouter un comentaire</button>
-    <!-- <div class="offset-md-4 col-md-4 alert alert-success" role="alert">
-        A simple success alert—check it out!
-    </div> -->
+<button id="btnAjout" type="button" class="col-md-4 offset-md-4 btn btn-success">Ajouter un comentaire</button>
     <form id="formCom" class="d-none formCom form-horizontal" method="POST" action="">
     <fieldset>
     <legend>Ajouter un comentaire</legend>
@@ -64,14 +61,13 @@ $sql->closeCursor();?>
 while ($data = $coms->fetch()){ ?>
 <div class="comentaire">
     <p><?= $data['contenu'] ?></p>
-    <div class="row signComs">
-        <h6 class="col-md-4"><?= $data['pseudo'] ?> le <?= $data['la_date'] ?></h6>
-        <form action="" method="post"><button type="submit" id="signal" name="signal" class="col-md-2 offset-md-5 btn btn-danger">Signaler</button></form>
+    <div class="row">
+        <p><?= $data['pseudo'] ?> le <?= $data['la_date'] ?></p>
+        <a href="/pro4/signaler/<?= $data['id']; ?>" class="btn btn-danger">Signaler <i class="fas fa-bell"></i></a>
     </div>
 </div>
 <?php }
 $coms->closeCursor();?>
-<script src="../public/js/form.js"></script>
 
 
 <?php $content = ob_get_clean();

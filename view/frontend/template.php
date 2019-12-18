@@ -7,8 +7,7 @@
     <script src="https://kit.fontawesome.com/2c4122a5e2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./public/css/index.css">
-    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="/pro4/public/css/index.css">
     <title><?= $title ?></title>
 </head>
 <body>
@@ -33,7 +32,6 @@
         </footer>
 
 
-<script src="../public/js/form.js"></script>
-<script src="../public/js/formAdmin.js"></script>
+<script src="/pro4/public/js/form.js"></script>
 </body>
 </html>

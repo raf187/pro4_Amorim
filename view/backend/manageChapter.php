@@ -3,8 +3,8 @@
 
 <?php
 if(isset($id)) {
-    if($sql->rowCount() == 1) {
-        $data = $sql->fetch();
+    if($display->rowCount() == 1) {
+        $data = $display->fetch();
     } else {
         die('Cet article n\'existe pas !');
     }

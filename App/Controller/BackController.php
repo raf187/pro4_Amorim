@@ -1,78 +1,121 @@
-<?php
-namespace App\Controller;
-use App\Model\LogAuth;
-use App\Model\Read;
-use App\Model\Modchap;
-use App\Model\ModComs;
-use App\Model\Post;
-use App\Model\Delete;
+<?php namespace App\Controller;
+use App\Model\FrontChapter;
+use App\Model\ManageAdmin;
+use App\Model\AdminChapter;
+use App\Model\AdminComments;
+use Exception;
 
 class BackController{
-
-    public function log(){
-        session_start();
-        $log = new LogAuth();
+    //connection
+    public function login(){
+        $log = new ManageAdmin();
         $log->login();
         require './view/backend/login.php';
     }
-
-    public function index(){
-        $log = new LogAuth();
-        $log->login();
-        require './view/backend/admin.php';
+    public function logout(){
+        session_destroy();
+        header('location:/pro4');
+    }
+    public function indexAdmin(){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            require './view/backend/admin.php';
+        }else{
+            header('location:/pro4/login');
+        }
+    }
+    //Chapitre
+    public function displayChapter(){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new FrontChapter();
+            $display = $conn->indexChapter();
+            require './view/backend/chapterAdmin.php';
+        }else{
+            header('location:/pro4/login');
+        }
     }
 
-    public function addChap(){
-
-        require './view/backend/addChap.php';
-    }
-    public function chapterAdmin(){
-        $bdd = new Read();
-        $sql = $bdd->chapterIndex();
-        require './view/backend/chapterAdmin.php';
-    }
-    public function chapterDelete(){
-        $sup = new Delete;
-        $delete = $sup->delete();
+    public function createChapter(){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new AdminChapter();
+            $create = $conn->createChapter();
+            require './view/backend/createChapter.php';
+        }else{
+            header('location:/pro4/login');
+        }
     }
 
-    public function comAdmin(){
-
-        require './view/backend/comAdmin.php';
+    public function updateChapter($id){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new AdminChapter();
+            $display = $conn->displayChapter($id);
+            $update = $conn->updateChapter($id);
+            require('./view/backend/manageChapter.php');
+        }else{
+            header('location:/pro4/login');
+        }
     }
 
-    public function addAdmin(){
-        $bdd = new Read();
-        $sql = $bdd->getAdmin();
-        require './view/backend/authAdmin.php';
+    public function deleteChapter($id){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new AdminChapter();
+            $delete = $conn->deleteChapter($id);
+        }else{
+            header('location:/pro4/login');
+        }
     }
-
-    public function modifyChapter($id){
-        $modChap = new ModChap();
-        $sql = $modChap->getChapter($id);
-        $update = $modChap->updateChapter($id);
-        require('./view/backend/modifyChap.php');
+    //Commentaires
+    public function displayComments(){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new AdminComments();
+            $display = $conn->displayComments();
+            require('./view/backend/commentsAdmin.php');
+        }else{
+            header('location:/pro4/login');
+        }
     }
-
-    public function modComs(){
-        $bdd = new ModComs();
-        $sql = $bdd->getComs();
-        require('./view/backend/comAdmin.php');
+    public function deleteComments($id){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new AdminComments();
+            $delete = $conn->deleteComment($id);
+        }else{
+            header('location:/pro4/login');
+        }
     }
-    public function chapterPost(){
-        $bdd = new Post();
-        $insert = $bdd->chapPost();
+    public function reportComments($id){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new AdminComments();
+            $validate = $conn->reportComment($id);
+        }else{
+            header('location:/pro4/login');
+        }
     }
-    public function newAdmin(){
-        $bdd = new Post();
-        $insert = $bdd->addAdmin();
+    //Administrateurs
+    public function createAdmin(){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new ManageAdmin();
+            $display = $conn->displayAdmin();
+            $create = $conn->createAdmin();
+            require './view/backend/manageAdmin.php';
+        }else{
+            header('location:/pro4/login');
+        }
     }
-
-    public function modAdmin($id){
-        $bdd = new LogAuth();
-        $sql = $bdd->getAdminUpdate($id);
-        $bdd->updateAdmin($id);
-        
-        require('./view/backend/modAdmin.php');
+    public function updateAdmin($id){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new ManageAdmin();
+            $display = $conn->displayAdminUpdate($id);
+            $update = $conn->updateAdmin($id);
+            require './view/backend/updateAdmin.php';
+        }else{
+            header('location:/pro4/login');
+        }
+    }
+    public function deleteAdmin($id){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new ManageAdmin();
+            $delete = $conn->deleteAdmin($id);
+        }else{
+            header('location:/pro4/login');
+        }
     }
 }

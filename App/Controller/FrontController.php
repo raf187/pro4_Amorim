@@ -1,12 +1,12 @@
 <?php
 namespace App\Controller;
-use App\Model\Read;
-use App\Model\Post;
+use App\Model\Comments;
+use App\Model\FrontChapter;
 
 class FrontController{
 
-    public function index(){
-        require './view/frontend/index.php';
+    public function home(){
+        require './view/frontend/home.php';
 
     }
 
@@ -15,10 +15,10 @@ class FrontController{
 
     }
 
-    public function chapter(){
-        $bdd = new Read();
-        $sql = $bdd->chapterIndex();
-        require './view/frontend/chapter.php';
+    public function indexChapter(){
+        $conn = new FrontChapter();
+        $index = $conn->indexChapter();
+        require './view/frontend/indexChapter.php';
 
     }
 
@@ -27,18 +27,22 @@ class FrontController{
 
     }
 
-    public function chapterRead($id){
-        $bdd = new Read();
-        $sql = $bdd->readChapter($id);
-        $coms = $bdd->getComs($id);
-        require './view/frontend/chapterRead.php';
+    public function displayChapter($id){
+        $conn = new FrontChapter();
+        $display = $conn->displayChapter($id);
+        $coms = $conn->displayComments($id);
+        require './view/frontend/displayChapter.php';
     }
 
-    public function comentPost($id_article){
-        $bdd = new Post();
-        $insert = $bdd->comPost($id_article);
-        $addSignal = $bdd->signalCom();
+    public function comments($id_article){
+        $conn = new Comments();
+        $insert = $conn->commentPost($id_article);
     }
+    public function reportComment($id){
+        $conn = new Comments();
+        $report = $conn->reportComment($id);
+    }
+    
 
 
 }

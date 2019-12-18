@@ -2,19 +2,16 @@
 
 <?php ob_start(); ?>
 <!-- button pour ajouter admin -->
-<form id="formAmin" method="POST" class="form-horizontal">
-    <div class="form-group">
-        <div class="col-md-4 offset-md-4">
-            <button id="ajoutAdmin" name="ajoutAdmin" class="btn btn-success">Ajouter un nouveu administrateur</button>
-        </div>
-    </div>
+<button id="ajoutAdmin" type="button" name="ajoutAdmin" class="btn btn-success col-md-4">Ajouter un nouveu administrateur</button>
+
 <!-- formulaire pour poster info nouveau admin -->
+<form id="formAdmin" method="POST" class="d-none form-horizontal">
     <div class="card mt-5">
         <div class="card-header">
             <h3>Ajouter un nouveu administrateur</h3>
         </div>
         <div class="card-body">
-            <table class="tableAddAdmin table table-striped">
+            <table class="table table-striped">
                 <tbody>
                     <tr>
                         <th scope="col">
@@ -55,21 +52,20 @@
                 </tr>
             </thead>
             <tbody>
-                <?php while ($data = $sql->fetch()){ ?>
+                <?php while ($data = $display->fetch()){ ?>
                     <tr>
                         <td><?= $data['pseudo']; ?></td>
                         <td><?= $data['mot_de_passe']; ?></td>
                         <td><?= $data['email']; ?></td>
-                        <td><a href="/pro4/modifier-admin/<?= $data['id']; ?>" id="modAdmin" name="modAdmin" class="btn btn-success">Modifier</a></td>
-                        <td><input id="anulAdmin" name="" class="btn btn-danger" type="button" value="Suprimer"></td>
+                        <td><a href="/pro4/modifier-admin/<?= $data['id']; ?>" class="btn btn-success">Modifier</a></td>
+                        <td><a href="/pro4/effacer-admin/<?= $data['id']; ?>" class="btn btn-danger">Suprimer</a></td>
                     </tr>
                     <?php } 
-                    $sql->closeCursor();?>
+                    $display->closeCursor();?>
             </tbody>
         </table>
     </div>
 </div>
-<!-- <script src="../public/js/formAdmin.js"></script> -->
 <?php $content = ob_get_clean();
 require 'view/backend/templateBack.php';
 ?>

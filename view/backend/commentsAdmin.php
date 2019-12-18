@@ -10,7 +10,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Chapitre</th>
+                    <th scope="col">Id chapitre</th>
                     <th scope="col">Auteur</th>
                     <th scope="col">Date</th>
                     <th scope="col">Contenu</th>
@@ -19,14 +19,15 @@
                 </tr>
             </thead>
             <tbody>
-                <?php while ($data = $sql->fetch()){ ?>
+                <?php while ($data = $display->fetch()){ ?>
                 <tr>
-                    <td>Chapitre <?= $data['id_article']; ?></td>
+                    <td><?= $data['id_article']; ?></td>
                     <td><?= $data['pseudo']; ?></td>
                     <td><?= $data['la_date']; ?></td>
                     <td><?= $data['contenu']; ?></td>
-                    <td><input class="btn btn-success" type="button" value="Valider"></td>
-                    <td><input class="btn btn-danger" type="button" value="Suprimer"></td>
+                    <!-- <td><input class="btn btn-success" type="button" value="Valider"></td> -->
+                    <td><a href="/pro4/valider-com/<?= $data['id']; ?>" class="btn btn-success">Valider</a></td>
+                    <td><a href="/pro4/supprimer-com/<?= $data['id']; ?>" class="btn btn-danger">Suprimer</a></td>
                 </tr>
                 <?php }?>
             </tbody>

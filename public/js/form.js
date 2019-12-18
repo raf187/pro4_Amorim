@@ -4,42 +4,40 @@ class Form{
         this.formComs = document.querySelector("#formCom");
         this.sendBtn = document.querySelector("#envoyer");
         this.ajoutAdmin = document.querySelector("#ajoutAdmin");
-        this.formAdmin = document.querySelector("#formAmin");
+        this.formAdmin = document.querySelector("#formAdmin");
         this.btnAddAdmin = document.querySelector("#btnAddAdmin");
-
-        this.btnAjout.addEventListener("click", this.addComentForm.bind(this));
-        this.sendBtn.addEventListener("click", this.removeComentForm.bind(this));
-
-        this.btnAjout.addEventListener("click", this.addAdminForm.bind(this));
-        this.sendBtn.addEventListener("click", this.removeAdminForm.bind(this));
     }
 
     addComentForm(){
-        $("#btnAjout").click(() => {
-            $("#btnAjout").addClass('d-none');
-            $("#formCom").removeClass('d-none');
+        $(this.btnAjout).click(() => {
+            $(this.btnAjout).addClass('d-none');
+            $(this.formComs).removeClass('d-none');
         })
     }
     removeComentForm(){
-        $("#envoyer").click(() => {
-            $("#btnAjout").removeClass('d-none');
-            $("#formCom").addClass('d-none');
+        $(this.sendBtn).click(() => {
+            $(this.btnAjout).removeClass('d-none');
+            $(this.formComs).addClass('d-none');
         })
     }
     addAdminForm(){
-        $("#ajoutAdmin").click(() => {
-            $("#ajoutAdmin").addClass('d-none');
-            $("#formAmin").removeClass('d-none');
+        $(this.ajoutAdmin).click(() => {
+            $(this.ajoutAdmin).addClass('d-none');
+            $(this.formAdmin).removeClass('d-none');
         })
     }
     removeAdminForm(){
-        $("#btnAddAdmin").click(() => {
-            $("#btnAddAdmin").removeClass('d-none');
-            $("#formAmin").addClass('d-none');
+        $(this.btnAddAdmin).click(() => {
+            $(this.ajoutAdmin).removeClass('d-none');
+            $(this.formAdmin).addClass('d-none');
         })
     }
 
     
 }
 
-new Form();
+let set = new Form();
+set.addComentForm();
+set.removeComentForm();
+set.addAdminForm();
+set.removeAdminForm();
