@@ -10,7 +10,7 @@ class AdminComments extends DataBase{
     public function reportComment($id){
         $conn = $this->connect();
         $report = $conn->prepare("UPDATE comentaires SET signale = :false WHERE id = :id");
-        $report->execute([':false' => 0, ':id' => $id]);
+        $report->execute([':false' => 1, ':id' => $id]);
         header('location:/pro4/comentaires-admin');
     }
     public function deleteComment($id){
@@ -19,6 +19,5 @@ class AdminComments extends DataBase{
         $delete->execute([':id' => $id]);
         header('location:/pro4//comentaires-admin');
     }
-    
 
 }

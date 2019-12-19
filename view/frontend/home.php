@@ -1,10 +1,26 @@
 <?php $title = ('Billet simple pour l\'Alaska - Accueil'); ?>
 
 <?php ob_start(); ?>
-    <section class="homePage">
-        <h2>Bienvenue</h2>
-        <p>Ut ad Honoratum tum comitem orientis formula missa letali omnino scelere nullo contactus idem Clematius nec hiscere nec loqui permissus occideretur.autem inter humilia supergressa iam impotentia fines mediocrium delictorum nefanda Clematii cuiusdam Alexandrini Eminuit autem inter humilia supergressa iam impotentia fines mediocrium delictorum nefanda Clematii cuiusdam Alexandrini nobilis mors repentina; cuius socrus cum misceri sibi generum, flagrans eius amore, non impetraret, ut ferebatur, per palatii pseudothyrum introducta, oblato pretioso reginae monili id adsecuta est, ut ad Honoratum tum comitem orientis formula missa letali omnino scelere.</p>
-    </section>
-    
+    <div class="jumbotron">
+        <h1 class="display-4">Bonjour!</h1>
+        <p class="lead">
+            Bienvenue sur mon premier livre en ligne, Billet simple pour l'Alaska.<br>Rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.
+        </p>
+        <hr class="my-4">
+        <p class="hr">
+            Exitez pas a le lire, bonne lecture.
+        </p>
+        <a class="hr btn btn-primary btn-lg offset-md-4 col-md-4" href="/pro4/chapitre" role="button">Les chapitres</a>
+    </div> 
+    <ul class="nav nav-list justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="/pro4/chapitre"><i class="fas fa-book-open"></i><br>Chapitres</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pro4/auteur"><i class="fas fa-user-edit"></i><br>Auteur</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pro4/contact"><i class="fas fa-envelope-open-text"></i><br>Contact</a>
+        </li>
 <?php $content = ob_get_clean(); ?>
 <?php require 'template.php'; ?>

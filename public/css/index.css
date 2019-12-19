@@ -12,246 +12,191 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100%;
 }
 
-header h1 {
-  color: #fff;
-  font-size: 48px;
-  padding: 10px;
-  text-align: center;
+.navbar {
+  background-color: #343a41;
 }
 
-menu {
-  -webkit-transform: translateY(-60px);
-          transform: translateY(-60px);
-  background-color: rgba(0, 0, 0, 0.2);
+.navbar .navbar-brand {
+  font-size: 28px;
+  padding-left: 30px;
 }
 
-menu:hover {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-menu p {
+.navbar .nav-link {
+  margin-right: 50px;
   font-size: 24px;
-  font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #0C72FF;
-  padding: 10px;
 }
 
-ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #fff;
-  padding-top: 5px;
+.navbar #navbarNav {
+  padding-right: 30px;
 }
 
-ul li {
-  margin: 0 20px;
-  list-style: none;
-  font-size: 22px;
+.footerWeb {
+  background-color: rgba(52, 58, 65, 0.8);
+  color: #999da0;
+  text-align: center;
+  font-size: 18px;
 }
 
-ul li a {
-  color: #fff;
-  font-weight: bold;
-}
-
-ul li a:focus, ul li a:hover {
+.footerWeb a {
   text-decoration: none;
-  color: #0C72FF;
-  border-bottom: 4px solid #0C72FF;
+  color: #007bff;
 }
 
-.homePage {
-  width: 60%;
-  margin: 100px auto;
+.footerWeb a:hover {
+  text-decoration: none;
+}
+
+.nav-list .nav-link {
+  text-align: center;
+  font-size: 32px;
+  margin: 25px;
+}
+
+.nav-list i {
+  font-size: 60px;
+}
+
+.border-primary {
+  text-align: center;
+  width: 20%;
+  margin: 10% auto;
+  border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 10px #000;
-          box-shadow: 0 0 10px #000;
-  border-radius: 20px;
+  border: solid 2px #fff;
+  -webkit-box-shadow: 0 0 10px #696876;
+          box-shadow: 0 0 10px #696876;
+}
+
+.border-primary .card-header {
+  font-size: 34px;
+  color: #fff;
+  background-color: rgba(52, 58, 65, 0.8);
+  border-radius: 20px 20px 0 0;
+}
+
+.border-primary .btn {
+  margin: 5px 20px 0 20px;
+  border-radius: 10px;
+}
+
+.border-primary input {
+  border-radius: 10px;
+}
+
+.jumbotron {
+  width: 60%;
   padding: 40px;
-  text-align: center;
-}
-
-.homePage p {
-  color: #000;
-}
-
-.homePage h2 {
-  padding-bottom: 50px;
-}
-
-.liens {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  margin: 120px auto;
-  color: #fff;
-  text-shadow: 0 0 5px #000;
-}
-
-.liens div {
-  margin: 40px 80px;
-  text-align: center;
-}
-
-.liens i {
-  font-size: 50px;
-  padding: 10px;
-}
-
-.liens a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.liens a:hover {
-  color: #0C72FF;
-}
-
-.box {
-  width: 400px;
-  padding: 50px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
+  margin: 8%  auto;
+  margin-bottom: 35px;
+  border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  -webkit-box-shadow: 0 0 10px #000;
-          box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #696876;
+          box-shadow: 0 0 10px #696876;
 }
 
-.text, .password {
-  display: block;
-  border: 0;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #43464F;
-  border-radius: 20px;
-  padding: 12px 8px;
-  width: 200px;
+.jumbotron h1 {
+  padding-bottom: 20px;
 }
 
-.text .text:focus, .text .password:focus, .password .text:focus, .password .password:focus {
-  border-radius: 20px;
-  width: 300px;
-  border-color: #0C72FF;
-}
-
-.submit {
-  display: block;
-  border: 0;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #43464F;
-  border-radius: 20px;
-  padding: 12px 40px;
-  cursor: pointer;
-}
-
-.submit:hover {
-  background-color: #0C72FF;
-  border-color: #0C72FF;
-  color: #fff;
-}
-
-.signature {
-  margin: 10px;
-}
-
-.chapter {
-  width: 70%;
-  background-color: rgba(255, 255, 255, 0.7);
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.chapter a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.titleH1 {
-  text-align: center;
-  padding: 15px;
-}
-
-form {
-  width: 80%;
-  margin: 20px auto;
+.jumbotron .hr {
   text-align: center;
 }
 
-form #comentaire {
-  height: 100px;
-}
-
-form label, form legend {
-  color: #fff;
-}
-
-#btnAjout {
+.container {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin: auto;
+  width: 100%;
+  justify-items: center;
 }
 
-.coms {
-  color: #fff;
+.container .jumbotron {
+  width: 100%;
+}
+
+.container img {
+  width: 40%;
+  margin-bottom: -330px;
+  margin-left: 30%;
+}
+
+.container .jumbotron {
+  padding-top: 245px;
+}
+
+.auteur {
   text-align: center;
-  margin: 10px;
 }
 
-.comentaire {
+.form-contact {
   width: 60%;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 20px;
+  margin: 8%  auto;
+  border-radius: 0 25px 0 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 0 10px #696876;
+          box-shadow: 0 0 10px #696876;
+}
+
+.form-contact .card-header {
   text-align: center;
-  border-radius: 10px;
+}
+
+.formCom label {
+  font-size: 18px;
+  font-weight: bold;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.formCom legend {
+  text-align: center;
+}
+
+.comentCard {
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 0 25px 0 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 0 10px #696876;
+          box-shadow: 0 0 10px #696876;
+}
+
+.comentCard .card-body {
+  background-color: rgba(255, 255, 255, 0.86);
+}
+
+.comentCard i {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.contaierIndexChapter {
+  margin-top: 110px;
+}
+
+.indexChapter {
+  width: 60%;
   margin: 20px auto;
+  margin-bottom: 20px;
+  border-radius: 0 25px 0 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 0 10px #696876;
+          box-shadow: 0 0 10px #696876;
 }
 
-.signComs {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-top: solid 1px #fff;
-  padding-top: 15px;
+.indexChapter h3 {
+  font-size: 24px;
 }
 
-.signComs .btn {
-  padding: 2px;
+.indexChapter .card-body {
+  border-radius: 0 0 0 25px;
+  background-color: rgba(255, 255, 255, 0.86);
 }
 
-footer {
-  padding-top: 20px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.2);
-  line-height: 30px;
-  padding: 4px;
-  text-align: center;
-  font-size: 22px;
-}
-
-footer a {
-  text-decoration: none;
-  color: #0C72FF;
+.indexTitre {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 30px;
 }
 /*# sourceMappingURL=index.css.map */

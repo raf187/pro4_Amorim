@@ -20,21 +20,19 @@ if(isset($id)) {
     <div class="card-body">
         <form class="form-horizontal"  method="POST">
             <fieldset>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="titre">Titre</label>  
-                        <div class="col-md-4 offset-md-4">
-                            <input id="titre" name="titre" type="text" class="form-control input-md" value="<?= $data['titre'] ?>" required="">  
+                <div class="row form-group col-md-12">
+                        <label class="offset-md-1 col-md-1 control-label" for="titre">Titre</label>  
+                        <div class="col-md-4">
+                            <input value="<?= $data['titre'] ?>"  id="titre" name="titre" type="text" class="form-control input-md" required="">  
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="pseudo">Auteur</label>  
-                        <div class="col-md-4 offset-md-4">
-                            <input id="pseudo" name="pseudo" type="text" class="form-control input-md" value="<?= $data['pseudo'] ?>" required="">
+                        <label class="col-md-1 control-label" for="pseudo">Auteur</label>  
+                        <div class="col-md-4">
+                            <input value="<?= $data['pseudo'] ?>" id="pseudo" name="pseudo" type="text" class="form-control input-md" required="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-10 offset-md-1">                     
-                            <textarea class="form-control textchapter" id="contenu" name="contenu" rows="20">
+                            <textarea class="form-control textchapter" id="contenu" name="contenu" rows="18">
                                 <?= $data['contenu'] ?>
                             </textarea>
                         </div>

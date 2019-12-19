@@ -6,7 +6,7 @@ class FrontChapter extends DataBase
     public function indexChapter()
     {
         $db = $this->connect();
-        $req = $db->query("SELECT id,titre,pseudo,la_date,SUBSTRING(contenu,1,500) AS contenu FROM articles");
+        $req = $db->query("SELECT id,titre,pseudo,la_date,SUBSTRING(contenu,1,400) AS contenu FROM articles");
         return $req;
     }
     public function displayChapter($id)

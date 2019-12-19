@@ -3,6 +3,7 @@ use App\Model\FrontChapter;
 use App\Model\ManageAdmin;
 use App\Model\AdminChapter;
 use App\Model\AdminComments;
+use App\Model\MessageAdmin;
 use Exception;
 
 class BackController{
@@ -20,7 +21,7 @@ class BackController{
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             require './view/backend/admin.php';
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
     //Chapitre
@@ -30,7 +31,7 @@ class BackController{
             $display = $conn->indexChapter();
             require './view/backend/chapterAdmin.php';
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
 
@@ -40,7 +41,7 @@ class BackController{
             $create = $conn->createChapter();
             require './view/backend/createChapter.php';
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
 
@@ -51,7 +52,7 @@ class BackController{
             $update = $conn->updateChapter($id);
             require('./view/backend/manageChapter.php');
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
 
@@ -60,7 +61,7 @@ class BackController{
             $conn = new AdminChapter();
             $delete = $conn->deleteChapter($id);
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
     //Commentaires
@@ -70,7 +71,7 @@ class BackController{
             $display = $conn->displayComments();
             require('./view/backend/commentsAdmin.php');
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
     public function deleteComments($id){
@@ -78,7 +79,7 @@ class BackController{
             $conn = new AdminComments();
             $delete = $conn->deleteComment($id);
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
     public function reportComments($id){
@@ -86,7 +87,7 @@ class BackController{
             $conn = new AdminComments();
             $validate = $conn->reportComment($id);
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
     //Administrateurs
@@ -97,7 +98,7 @@ class BackController{
             $create = $conn->createAdmin();
             require './view/backend/manageAdmin.php';
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
     public function updateAdmin($id){
@@ -107,7 +108,7 @@ class BackController{
             $update = $conn->updateAdmin($id);
             require './view/backend/updateAdmin.php';
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
         }
     }
     public function deleteAdmin($id){
@@ -115,7 +116,33 @@ class BackController{
             $conn = new ManageAdmin();
             $delete = $conn->deleteAdmin($id);
         }else{
-            header('location:/pro4/login');
+            header('location:/pro4/connexion');
+        }
+    }
+    //message
+    public function displayMessage(){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new MessageAdmin();
+            $display = $conn->displayMessage();
+            require './view/backend/messageAdmin.php';
+        }else{
+            header('location:/pro4/connexion');
+        }
+    }
+    public function deleteMessage($id){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new MessageAdmin();
+            $display = $conn->deleteMessage($id);
+        }else{
+            header('location:/pro4/connexion');
+        }
+    }
+    public function postMessage(){
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new MessageAdmin();
+            $post = $conn->postMessage();
+        }else{
+            header('location:/pro4/connexion');
         }
     }
 }

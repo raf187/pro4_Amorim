@@ -6,6 +6,7 @@ class Form{
         this.ajoutAdmin = document.querySelector("#ajoutAdmin");
         this.formAdmin = document.querySelector("#formAdmin");
         this.btnAddAdmin = document.querySelector("#btnAddAdmin");
+        this.btnDelete = document.querySelector("#btnSup");
     }
 
     addComentForm(){
@@ -32,8 +33,11 @@ class Form{
             $(this.formAdmin).addClass('d-none');
         })
     }
-
-    
+    deleteComfirm(){
+        $(this.btnDelete).click(function () {
+            return confirm("Etes vous sur de voulloir supprimer ?");
+        });
+    }
 }
 
 let set = new Form();
@@ -41,3 +45,4 @@ set.addComentForm();
 set.removeComentForm();
 set.addAdminForm();
 set.removeAdminForm();
+set.deleteComfirm();

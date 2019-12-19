@@ -10,21 +10,21 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">Nom</th>
-          <th scope="col">Auteur</th>
-          <th scope="col">Date creation</th>
-          <th scope="col">Modifier</th>
-          <th scope="col">Suprimer</th>
+          <th class="align-middle" scope="col">Nom</th>
+          <th class="align-middle" scope="col">Auteur</th>
+          <th class="align-middle" scope="col">Date creation</th>
+          <th class="align-middle" scope="col">Modifier</th>
+          <th class="align-middle" scope="col">Suprimer</th>
         </tr>
       </thead>
     <tbody>
       <?php while ($data = $display->fetch()){?>
       <tr>
-        <td><?= $data['titre']; ?></td>
-        <td><?= $data['pseudo']; ?></td>
-        <td><?= $data['la_date']; ?></td>
-        <td><a href="/pro4/modifier-chapitre/<?= $data['id']; ?>"><input class="btn btn-success" type="button" value="Modifier"></a></td>
-        <td><a href="/pro4/effacer-chapitre/<?= $data['id']; ?>"><input class="btn btn-danger" type="submit" value="Suprimer"></a></td>
+        <td class="align-middle"><?= $data['titre']; ?></td>
+        <td class="align-middle"><?= $data['pseudo']; ?></td>
+        <td class="align-middle"><?= $data['la_date']; ?></td>
+        <td class="align-middle"><a href="/pro4/modifier-chapitre/<?= $data['id']; ?>"><input class="btn btn-success" type="button" value="Modifier"></a></td>
+        <td class="align-middle"><a href="/pro4/effacer-chapitre/<?= $data['id']; ?>" id="btnSup" class="btn btn-danger">Suprimer</a></td>
       </tr>
       <?php }?>
     </tbody>

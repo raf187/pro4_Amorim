@@ -2,6 +2,7 @@
 namespace App\Controller;
 use App\Model\Comments;
 use App\Model\FrontChapter;
+use App\Model\AdminComments;
 
 class FrontController{
 
@@ -33,7 +34,6 @@ class FrontController{
         $coms = $conn->displayComments($id);
         require './view/frontend/displayChapter.php';
     }
-
     public function comments($id_article){
         $conn = new Comments();
         $insert = $conn->commentPost($id_article);

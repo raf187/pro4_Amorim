@@ -10,14 +10,14 @@ class ManageAdmin extends DataBase
     }
     public function createAdmin()
     {
-        $con = $this->connect();
+        $conn = $this->connect();
         if (isset($_POST['btnAddAdmin'])) {
             if (!empty($_POST['pseudo']) and !empty($_POST['mdp']) and !empty($_POST['email'])) {
                 $pseudo = htmlspecialchars($_POST['pseudo']);
-                $mdp = htmlspecialchars($_POST['mdp']);
-                $email = htmlspecialchars($_POST['email']);
-                $insert = $con->prepare("INSERT INTO utilisateur (pseudo, mot_de_passe, email) VALUES (:pseudo, :mdp, :email)");
-                $insert->execute([':pseudo'=>$pseudo, ':mdp'=>$mdp, ':email'=>$email]);
+                $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+                $mail = htmlspecialchars($_POST['email']);
+                $insert = $conn->prepare("INSERT INTO utilisateur (pseudo, mot_de_passe, email) VALUES (:pseudo, :mdp, :email)");
+                $insert->execute([':pseudo'=>$pseudo, ':mdp'=>$mdp, ':email'=>$mail]);
                 header("location:/pro4/gestion-admin");
             } else {
                 echo 'Veuillez remplir tous les champs';
@@ -26,10 +26,10 @@ class ManageAdmin extends DataBase
     }
     public function displayAdminUpdate($id)
     {
-        $db = $this->connect();
-        $req = $db->prepare("SELECT * FROM utilisateur WHERE id= :id");
-        $req->execute([':id' => $id]);
-        return $req;
+        $conn = $this->connect();
+        $display = $conn->prepare("SELECT * FROM utilisateur WHERE id= :id");
+        $display->execute([':id' => $id]);
+        return $display;
     }
     public function updateAdmin($id){
         $conn = $this->connect();
@@ -50,31 +50,26 @@ class ManageAdmin extends DataBase
         $delete->execute([':id' => $id]);
         header('location:/pro4/gestion-admin');
     }
-    private function adminCheck()
-    {
-        $conn = $this->connect();
-        $adminCheck = $conn->prepare("SELECT * FROM utilisateur WHERE pseudo = :pseudo AND mot_de_passe = :mot_de_passe");
-        return $adminCheck;
-    }
     public function login()
     {
-        if (isset($_POST['submit'])) {
-            $user = htmlspecialchars($_POST['pseudo']);
-            $pass = htmlspecialchars($_POST['mdp']);
-            if (!empty($user) and !empty($pass)) {
-                $adminCheck = $this->adminCheck();
-                $adminCheck->execute([':pseudo'=> $user, ':mot_de_passe'=> $pass]);
-                if ($adminCheck->rowCount() >= 1) {
-                    $data = $adminCheck->fetch();
+        if (isset($_POST['connect'])) {
+            $pseudo = htmlspecialchars($_POST['pseudo']);
+            $mdp = htmlspecialchars($_POST['mdp']);
+            $conn = $this->connect();
+            $stmt = $conn->prepare("SELECT id, pseudo, mot_de_passe FROM utilisateur WHERE pseudo = :pseudo");
+            $stmt->execute([':pseudo' => $pseudo]);
+            if ($stmt->rowCount() == 1) {
+                $data = $stmt->fetch();
+                if (password_verify($mdp, $data['mot_de_passe'])) {
                     $_SESSION['id'] = $data['id'];
                     if (!empty($_SESSION['id'])) {
-                        header('location:admin');
+                        header('location:/pro4/admin');
                     } else {
                         echo 'Pseudo ou mot de passe sont incorrect!';
                     }
-                } else {
-                    echo  'Entrez votre pseudo et mot de passe!';
                 }
+            }else {
+                echo  'Entrez votre pseudo et mot de passe!';
             }
         }
     }
