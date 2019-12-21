@@ -7,17 +7,21 @@ class AdminComments extends DataBase{
         $display = $conn->query("SELECT * FROM comentaires WHERE signale = 1 ORDER BY id_article");
         return $display;
     }
-    public function reportComment($id){
+    public function validateComment($id){
         $conn = $this->connect();
         $report = $conn->prepare("UPDATE comentaires SET signale = :false WHERE id = :id");
-        $report->execute([':false' => 1, ':id' => $id]);
-        header('location:/pro4/comentaires-admin');
+        $report->execute([':false' => 0, ':id' => $id]);
+        header('location:/pro4/commentaires-admin');
+        $_SESSION['message'] = "Commentaire validé.";
+        $_SESSION['msgtype'] = "success";
     }
     public function deleteComment($id){
         $conn = $this->connect();
         $delete = $conn->prepare("DELETE FROM comentaires WHERE id = :id");
         $delete->execute([':id' => $id]);
-        header('location:/pro4//comentaires-admin');
+        header('location:/pro4/commentaires-admin');
+        $_SESSION['message'] = "Commentaire supprimé.";
+        $_SESSION['msgtype'] = "danger";
     }
 
 }

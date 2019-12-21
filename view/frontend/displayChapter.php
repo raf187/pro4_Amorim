@@ -23,24 +23,24 @@ if(isset($id)) {
             <?= 'Par ' . $data['pseudo'] . ' le ' . $data['la_date']; ?>
         </p>
         <hr class="my-4">
-        <button id="btnAjout" type="button" class="col-md-4 offset-md-4 btn btn-success">Ajouter un comentaire</button>
+        <button id="btnAjout" type="button" class="col-md-4 offset-md-4 btn btn-success">Ajouter un commentaire</button>
         
-        <form id="formCom" class="d-none formCom form-horizontal" method="POST" action="">
-            <legend>Ajouter un comentaire</legend>
-            <div class="row col-md-10 offset-md-1 form-group">
-                <label class="justify-content-center col-md-2 offset-md-3 control-label" for="pseudo">Pseudo :</label>  
-                <div class="col-md-4">
+        <form id="formCom" class="d-none formCom col-md-6 offset-md-3 form-horizontal" method="POST" action="">
+            <legend>Ajouter un commentaire</legend>
+            <div class="form-group">
+                <label class=" control-label" for="pseudo">Pseudo</label>  
+                <div class="">
                     <input id="pseudo" name="pseudo" type="text" class="form-control input-md" required="">
                 </div>
             </div>
             <div class="form-group ">
-                <label class="col-md-4 offset-md-5 control-label" for="comentaire">Comentaire :</label>
-                <div class="col-md-8 offset-md-2">                     
+                <label class=" control-label" for="comentaire">Commentaire</label>
+                <div class="">                     
                     <textarea class="form-control" id="comentaire" name="comentaire" rows="4" required=""></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-4 offset-md-5">
+                <div class="col-md-4 offset-md-4">
                     <input id="envoyer" type="submit" name="envoyer" class="btn btn-info" value="Envoyer">
                 </div>
             </div>
@@ -49,7 +49,16 @@ if(isset($id)) {
 <?php
 $display->closeCursor();?>
 
-<h3 class="text-primary text-center">Les comentaires :</h3>
+<h3 class="text-primary text-center">Les commentaires :</h3>
+<?php 
+    if (isset($_SESSION['message'])) { ?>
+        <div class="col-md-4 offset-md-4 text-center alert alert-<?=$_SESSION['msgtype']?>">
+    <?php
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+    ?>
+    </div>
+    <?php } ?>
 <?php
 while ($data = $coms->fetch()){ ?>
 <div class="comentCard card border-dark">

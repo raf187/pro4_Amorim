@@ -16,6 +16,15 @@
                     <input id="mdp" name="mdp" type="password" placeholder="Mot de Passe" class="form-control input-md" required="">
                 </div>
             </div>
+            <?php 
+            if (isset($_SESSION['message'])) { ?>
+                <div class="col-md-10 offset-md-1 text-center alert alert-<?=$_SESSION['msgtype']?>">
+            <?php
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+            ?>
+            </div>
+            <?php } ?>
             <div class="form-group">
                 <div class="col-md-12">
                     <button type="submit" id="connect" name="connect" class="btn btn-primary">Connexion</button>

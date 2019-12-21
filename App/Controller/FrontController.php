@@ -2,11 +2,12 @@
 namespace App\Controller;
 use App\Model\Comments;
 use App\Model\FrontChapter;
-use App\Model\AdminComments;
 
 class FrontController{
 
     public function home(){
+        $conn = new FrontChapter();
+        $lastChapter = $conn->lastChapter();
         require './view/frontend/home.php';
 
     }

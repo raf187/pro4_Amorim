@@ -50,12 +50,16 @@ body {
 
 .nav-list .nav-link {
   text-align: center;
-  font-size: 32px;
-  margin: 25px;
+  font-size: 26px;
+  margin: 10px 45px;
 }
 
 .nav-list i {
-  font-size: 60px;
+  font-size: 40px;
+}
+
+.nav-list a {
+  text-shadow: 0 0 4px #696876;
 }
 
 .border-primary {

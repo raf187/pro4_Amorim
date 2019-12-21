@@ -12,10 +12,12 @@ class MessageAdmin extends DataBase{
         $delete = $conn->prepare("DELETE FROM messages WHERE id = :id");
         $delete->execute([':id' => $id]);
         header('location:/pro4/message-admin');
+        $_SESSION['message'] = "Message supprimé.";
+        $_SESSION['msgtype'] = "danger";
     }
     public function postMessage(){
         $conn = $this->connect();
-        if (isset($_POST['btnSend'])) {
+        if (isset($_POST['sendMsg'])) {
             $nom = htmlspecialchars($_POST['name']);
             $email = htmlspecialchars($_POST['email']);
             $objet = htmlspecialchars($_POST['objMsg']);
@@ -24,8 +26,11 @@ class MessageAdmin extends DataBase{
                 $insert = $conn->prepare("INSERT INTO messages (nom, email, objet, contenu, la_date) VALUES (:nom, :email, :objet, :contenu, Now())");
                 $insert->execute([':nom' => $nom, ':email' => $email, ':objet' => $objet, ':contenu' => $contenu]);
                 header('location:/pro4/contact');
+                $_SESSION['message'] = "Message envoyé.";
+                $_SESSION['msgtype'] = "success";
             } else{
-                echo 'remplier';
+                $_SESSION['message'] = "Veuillez remplir les champs.";
+                $_SESSION['msgtype'] = "warning";
             }
         }
     }

@@ -7,14 +7,23 @@
     <h3>Les chapitres</h3>
   </div>
   <div class="card-body">
+  <?php 
+    if (isset($_SESSION['message'])) { ?>
+        <div class="text-center alert alert-<?=$_SESSION['msgtype']?>">
+    <?php
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+    ?>
+    </div>
+    <?php } ?>
     <table class="table table-striped">
       <thead>
         <tr>
           <th class="align-middle" scope="col">Nom</th>
           <th class="align-middle" scope="col">Auteur</th>
-          <th class="align-middle" scope="col">Date creation</th>
-          <th class="align-middle" scope="col">Modifier</th>
-          <th class="align-middle" scope="col">Suprimer</th>
+          <th class="align-middle" scope="col">Date création</th>
+          <th class="align-middle" scope="col">Veuillez remplir tous les champs</th>
+          <th class="align-middle" scope="col">Supprimer</th>
         </tr>
       </thead>
     <tbody>
@@ -24,7 +33,7 @@
         <td class="align-middle"><?= $data['pseudo']; ?></td>
         <td class="align-middle"><?= $data['la_date']; ?></td>
         <td class="align-middle"><a href="/pro4/modifier-chapitre/<?= $data['id']; ?>"><input class="btn btn-success" type="button" value="Modifier"></a></td>
-        <td class="align-middle"><a href="/pro4/effacer-chapitre/<?= $data['id']; ?>" id="btnSup" class="btn btn-danger">Suprimer</a></td>
+        <td class="align-middle"><a href="/pro4/effacer-chapitre/<?= $data['id']; ?>" id="btnSup" class="btn btn-danger">Supprimer</a></td>
       </tr>
       <?php }?>
     </tbody>

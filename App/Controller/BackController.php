@@ -6,143 +6,156 @@ use App\Model\AdminComments;
 use App\Model\MessageAdmin;
 use Exception;
 
-class BackController{
+class BackController
+{
     //connection
-    public function login(){
+    public function login()
+    {
         $log = new ManageAdmin();
         $log->login();
         require './view/backend/login.php';
     }
-    public function logout(){
+    public function logout()
+    {
         session_destroy();
         header('location:/pro4');
     }
-    public function indexAdmin(){
+    public function indexAdmin()
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             require './view/backend/admin.php';
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
     //Chapitre
-    public function displayChapter(){
+    public function displayChapter()
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new FrontChapter();
             $display = $conn->indexChapter();
             require './view/backend/chapterAdmin.php';
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
 
-    public function createChapter(){
+    public function createChapter()
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new AdminChapter();
             $create = $conn->createChapter();
             require './view/backend/createChapter.php';
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
 
-    public function updateChapter($id){
+    public function updateChapter($id)
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new AdminChapter();
             $display = $conn->displayChapter($id);
             $update = $conn->updateChapter($id);
             require('./view/backend/manageChapter.php');
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
 
-    public function deleteChapter($id){
+    public function deleteChapter($id)
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new AdminChapter();
             $delete = $conn->deleteChapter($id);
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
     //Commentaires
-    public function displayComments(){
+    public function displayComments()
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new AdminComments();
             $display = $conn->displayComments();
             require('./view/backend/commentsAdmin.php');
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
-    public function deleteComments($id){
+    public function deleteComments($id)
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new AdminComments();
             $delete = $conn->deleteComment($id);
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
-    public function reportComments($id){
+    public function validateComment($id)
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new AdminComments();
-            $validate = $conn->reportComment($id);
-        }else{
+            $validate = $conn->validateComment($id);
+        } else {
             header('location:/pro4/connexion');
         }
     }
     //Administrateurs
-    public function createAdmin(){
+    public function createAdmin()
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new ManageAdmin();
             $display = $conn->displayAdmin();
             $create = $conn->createAdmin();
             require './view/backend/manageAdmin.php';
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
-    public function updateAdmin($id){
+    public function updateAdmin($id)
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new ManageAdmin();
             $display = $conn->displayAdminUpdate($id);
             $update = $conn->updateAdmin($id);
             require './view/backend/updateAdmin.php';
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
-    public function deleteAdmin($id){
+    public function deleteAdmin($id)
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new ManageAdmin();
             $delete = $conn->deleteAdmin($id);
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
     //message
-    public function displayMessage(){
+    public function displayMessage()
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new MessageAdmin();
             $display = $conn->displayMessage();
             require './view/backend/messageAdmin.php';
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
-    public function deleteMessage($id){
+    public function deleteMessage($id)
+    {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new MessageAdmin();
             $display = $conn->deleteMessage($id);
-        }else{
+        } else {
             header('location:/pro4/connexion');
         }
     }
-    public function postMessage(){
-        if (isset($_SESSION) && !empty($_SESSION['id'])) {
-            $conn = new MessageAdmin();
-            $post = $conn->postMessage();
-        }else{
-            header('location:/pro4/connexion');
-        }
+    public function postMessage()
+    {
+        $conn = new MessageAdmin();
+        $post = $conn->postMessage();
     }
 }

@@ -21,8 +21,8 @@ $router->get('/effacer-chapitre/:id', 'BackController@deleteChapter')->with('id'
 $router->get('/nouveau-chapitre', 'BackController@createChapter');
 $router->post('/nouveau-chapitre', 'BackController@createChapter');
 //gestion commentaires
-$router->get('/comentaires-admin', 'BackController@displayComments');
-$router->get('/valider-com/:id', 'BackController@reportComments')->with('id', '[0-9]+');
+$router->get('/commentaires-admin', 'BackController@displayComments');
+$router->get('/valider-com/:id', 'BackController@validateComment')->with('id', '[0-9]+');
 $router->get('/supprimer-com/:id', 'BackController@deleteComments')->with('id', '[0-9]+');
 //gestion des administrateurs
 $router->get('/gestion-admin', 'BackController@createAdmin');

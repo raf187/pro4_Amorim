@@ -12,10 +12,10 @@ if(isset($id)) {
     die('Erreur');
 }
 ?>
-<!-- formulaire pour modifier un chapitre existent -->
+<!-- formulaire pour modifier un chapitre existant -->
 <div class="card mt-5">
     <div class="card-header">
-        <h3>Modifer <?= $data['titre'] ?></h3>
+        <h3>Modifier <?= $data['titre'] ?></h3>
     </div>
     <div class="card-body">
         <form class="form-horizontal"  method="POST">

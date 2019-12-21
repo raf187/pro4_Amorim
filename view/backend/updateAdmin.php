@@ -21,7 +21,7 @@
                     <?php while ($data = $display->fetch()) { ?>
                         <tr>
                             <td class="align-middle" ><input id="pseudo" name="pseudo" type="text" value="<?= $data['pseudo']; ?>" class="form-control input-md" required=""></td>
-                            <td class="align-middle" ><input id="mdp" name="mdp" type="text" placeholder="Mot de passe crypté" class="form-control input-md" required=""></td>
+                            <td class="align-middle" ><input id="mdp" name="mdp" type="text" placeholder="Mot de passe crypté" class="form-control input-md"></td>
                             <td class="align-middle" ><input id="email" name="email" type="email" value="<?= $data['email']; ?>" class="form-control input-md" required=""></td>
                             <td class="align-middle" ><button id="modAdmin" name="modAdmin" type="submit" class="btn btn-success">Modifier</button></td>
                             <td class="align-middle" ><a href="/pro4/gestion-admin" class="btn btn-danger">Annuler</a></td>

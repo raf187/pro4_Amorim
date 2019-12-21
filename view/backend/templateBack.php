@@ -31,7 +31,7 @@
                         <a class="nav-link" href="/pro4/chapitres-admin">Gestion Chapitres</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/comentaires-admin">Comentaires</a>
+                        <a class="nav-link" href="/pro4/commentaires-admin">Commentaires</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/pro4/message-admin">Messages</a>
@@ -51,7 +51,7 @@
             </main>
             <footer class="footer mt-auto py-3">
                 <div class="container">
-                    <span class="">Ce site et un projet etudiant de <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>.</span>
+                    <span class="">Ce site et un projet étudiant de <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>.</span>
                 </div>
             </footer>
         <script src="/pro4/public/js/form.js"></script>

@@ -16,8 +16,11 @@ class AdminChapter extends DataBase{
                 $update = $conn->prepare("UPDATE articles SET titre = :titre, pseudo = :pseudo, contenu = :contenu WHERE id = :id ");
                 $update->execute([':titre' => htmlspecialchars($_POST['titre']), ':pseudo' => htmlspecialchars($_POST['pseudo']), ':contenu' => $_POST['contenu'],':id' => $id]);
                 header('location:/pro4/chapitres-admin');
+                $_SESSION['message'] = "Votre chapitre a bien été mis à jour.";
+                $_SESSION['msgtype'] = "success";
             } else {
-                echo 'error';
+                $_SESSION['message'] = "Une erreur s'est produite.";
+                $_SESSION['msgtype'] = "danger";
             }
         }
     }
@@ -29,6 +32,8 @@ class AdminChapter extends DataBase{
         $delete = $conn->prepare("DELETE FROM articles WHERE id = :id");
         $delete->execute([':id' => $id]);
         header('location:/pro4/chapitres-admin');
+        $_SESSION['message'] = "Chapitre supprimé.";
+        $_SESSION['msgtype'] = "danger";
     }
     public function createChapter(){
         if (isset($_POST['btnPub'])) {
@@ -39,15 +44,19 @@ class AdminChapter extends DataBase{
                     if ($verify === true) {
                         $verifyT = $stmt->fetch();
                         if ($_POST['titre'] === $verifyT['titre']) {
-                            echo'Titre deja utilisée';
+                            $_SESSION['message'] = "Titre dejà utilisée";
+                            $_SESSION['msgtype'] = "warning";
                         } else {
                             $insert = $conn->prepare("INSERT INTO articles (titre, contenu, pseudo, la_date) VALUES (:titre, :contenu, :pseudo, Now())");
                             $insert->execute([':titre' => htmlspecialchars($_POST['titre']), ':contenu' => $_POST['contenu'], ':pseudo' => htmlspecialchars($_POST['pseudo'])]);
                             header("location:chapitres-admin");
+                            $_SESSION['message'] = "Chapitre ajouté avec succès.";
+                            $_SESSION['msgtype'] = "success";
                         }
                     }
             } else{
-                echo 'remplier';
+                $_SESSION['message'] = "Veuillez remplir tous les champs.";
+                $_SESSION['msgtype'] = "warning";
             }
         }   
     }

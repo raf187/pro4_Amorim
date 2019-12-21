@@ -4,9 +4,11 @@ class Form{
         this.formComs = document.querySelector("#formCom");
         this.sendBtn = document.querySelector("#envoyer");
         this.ajoutAdmin = document.querySelector("#ajoutAdmin");
+        this.anullAjout = document.querySelector("#btnAnnuler");
+        
         this.formAdmin = document.querySelector("#formAdmin");
         this.btnAddAdmin = document.querySelector("#btnAddAdmin");
-        this.btnDelete = document.querySelector("#btnSup");
+        this.btnDelete = document.querySelector(".btnSup");
     }
 
     addComentForm(){
@@ -28,14 +30,21 @@ class Form{
         })
     }
     removeAdminForm(){
-        $(this.btnAddAdmin).click(() => {
-            $(this.ajoutAdmin).removeClass('d-none');
-            $(this.formAdmin).addClass('d-none');
-        })
+        $("#btnAddAdmin").click(function () {
+            if ($("#infoAdmim").val() === '') {
+                $( ".msgInput" ).text( "<p>Some</p> new text." ).addClass('alert-danger');
+            } else{
+                $(this.ajoutAdmin).removeClass('d-none');
+                $(this.formAdmin).addClass('d-none');
+            }
+        });
     }
+
     deleteComfirm(){
-        $(this.btnDelete).click(function () {
-            return confirm("Etes vous sur de voulloir supprimer ?");
+        $(document).ready(function(){
+            $(this.btnDelete).click(function () {
+                confirm("Etes vous sur de voulloir supprimer ?");
+            });
         });
     }
 }

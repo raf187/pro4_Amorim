@@ -2,6 +2,7 @@
 <?php ob_start(); ?>
 <div class="contaierIndexChapter">
     <h2 class="indexTitre text-primary text-center">Les chapitres</h2>
+    
     <?php
     while ($data = $index->fetch())
     {

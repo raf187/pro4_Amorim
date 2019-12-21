@@ -28,9 +28,18 @@
                     <textarea class="form-control" id="message" name="message" rows="6" required="">Votre message...</textarea>
                 </div>
             </div>
+            <?php 
+            if (isset($_SESSION['message'])) { ?>
+                <div class="col-md-8 offset-md-2 text-center alert alert-<?=$_SESSION['msgtype']?>">
+            <?php
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+            ?>
+            </div>
+            <?php } ?>
             <div class="form-group">
                 <div class="col-md-4 offset-md-5">
-                    <input value="Envoyer" type="submit" id="btnSend" name="btnSend" class="btn btn-primary">
+                    <input value="Envoyer" type="submit" id="sendMsg" name="sendMsg" class="btn btn-primary">
                 </div>
             </div>
         </form>

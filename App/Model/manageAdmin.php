@@ -12,15 +12,18 @@ class ManageAdmin extends DataBase
     {
         $conn = $this->connect();
         if (isset($_POST['btnAddAdmin'])) {
-            if (!empty($_POST['pseudo']) and !empty($_POST['mdp']) and !empty($_POST['email'])) {
-                $pseudo = htmlspecialchars($_POST['pseudo']);
-                $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-                $mail = htmlspecialchars($_POST['email']);
+            $pseudo = htmlspecialchars($_POST['pseudo']);
+            $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+            $mail = htmlspecialchars($_POST['email']);
+            if (!empty($pseudo) and !empty($mdp) and !empty($mail)) {
                 $insert = $conn->prepare("INSERT INTO utilisateur (pseudo, mot_de_passe, email) VALUES (:pseudo, :mdp, :email)");
                 $insert->execute([':pseudo'=>$pseudo, ':mdp'=>$mdp, ':email'=>$mail]);
-                header("location:/pro4/gestion-admin");
+                $_SESSION['message'] = "Administrateur ajouté.";
+                $_SESSION['msgtype'] = "success";
+                header('location:/pro4/gestion-admin');
             } else {
-                echo 'Veuillez remplir tous les champs';
+                $_SESSION['message'] = "Veuillez remplir les champs!.";
+                $_SESSION['msgtype'] = "warning";
             }
         }
     }
@@ -34,12 +37,15 @@ class ManageAdmin extends DataBase
     public function updateAdmin($id){
         $conn = $this->connect();
         if (isset($_POST['modAdmin'])) {
-            if (!empty($_POST['pseudo']) && !empty($_POST['mdp']) && !empty($_POST['email'])) {
+            if (!empty($_POST['pseudo']) && !empty($_POST['email'])) {
                 $update = $conn->prepare("UPDATE utilisateur SET pseudo = :pseudo, mot_de_passe = :mot_de_passe, email = :email WHERE id = :id ");
                 $update->execute([':pseudo' => $_POST['pseudo'], ':mot_de_passe' => $_POST['mdp'], ':email' => $_POST['email'],':id' => $id]);
                 header('location:/pro4/gestion-admin');
+                $_SESSION['message'] = "Administrateur mis à jour.";
+                $_SESSION['msgtype'] = "success";
             } else {
-                echo 'error';
+                $_SESSION['message'] = "Une erreur s'est produite.";
+                $_SESSION['msgtype'] = "danger";
             }
         }
     }
@@ -49,6 +55,8 @@ class ManageAdmin extends DataBase
         $delete = $conn->prepare("DELETE FROM utilisateur WHERE id = :id");
         $delete->execute([':id' => $id]);
         header('location:/pro4/gestion-admin');
+        $_SESSION['message'] = "Administrateur supprimé.";
+        $_SESSION['msgtype'] = "danger";
     }
     public function login()
     {
@@ -64,12 +72,16 @@ class ManageAdmin extends DataBase
                     $_SESSION['id'] = $data['id'];
                     if (!empty($_SESSION['id'])) {
                         header('location:/pro4/admin');
-                    } else {
-                        echo 'Pseudo ou mot de passe sont incorrect!';
+                        $_SESSION['message'] = "Bienvenue à votre espace d'administration " . $pseudo . ".";
+                        $_SESSION['msgtype'] = "success";
                     }
+                } else {
+                    $_SESSION['message'] = "Données invalides!";
+                    $_SESSION['msgtype'] = "danger";
                 }
             }else {
-                echo  'Entrez votre pseudo et mot de passe!';
+                $_SESSION['message'] = "Veuillez remplir les champs!";
+                $_SESSION['msgtype'] = "warning";
             }
         }
     }
