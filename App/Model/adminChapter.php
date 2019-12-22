@@ -35,28 +35,16 @@ class AdminChapter extends DataBase{
         $_SESSION['message'] = "Chapitre supprimé.";
         $_SESSION['msgtype'] = "danger";
     }
+
     public function createChapter(){
         if (isset($_POST['btnPub'])) {
             if (!empty($_POST['titre']) && !empty($_POST['pseudo']) && !empty($_POST['contenu'])) {
                 $conn = $this->connect();
-                $stmt = $conn->prepare("SELECT titre FROM articles WHERE titre = :titre");
-                $verify = $stmt->execute([':titre' => $_POST['titre']]);
-                    if ($verify === true) {
-                        $verifyT = $stmt->fetch();
-                        if ($_POST['titre'] === $verifyT['titre']) {
-                            $_SESSION['message'] = "Titre dejà utilisée";
-                            $_SESSION['msgtype'] = "warning";
-                        } else {
-                            $insert = $conn->prepare("INSERT INTO articles (titre, contenu, pseudo, la_date) VALUES (:titre, :contenu, :pseudo, Now())");
-                            $insert->execute([':titre' => htmlspecialchars($_POST['titre']), ':contenu' => $_POST['contenu'], ':pseudo' => htmlspecialchars($_POST['pseudo'])]);
-                            header("location:chapitres-admin");
-                            $_SESSION['message'] = "Chapitre ajouté avec succès.";
-                            $_SESSION['msgtype'] = "success";
-                        }
-                    }
-            } else{
-                $_SESSION['message'] = "Veuillez remplir tous les champs.";
-                $_SESSION['msgtype'] = "warning";
+                $insert = $conn->prepare("INSERT INTO articles (titre, contenu, pseudo, la_date) VALUES (:titre, :contenu, :pseudo, Now())");
+                $insert->execute([':titre' => htmlspecialchars($_POST['titre']), ':contenu' => $_POST['contenu'], ':pseudo' => htmlspecialchars($_POST['pseudo'])]);
+                header("location:chapitres-admin");
+                $_SESSION['message'] = "Chapitre ajouté avec succès.";
+                $_SESSION['msgtype'] = "success";
             }
         }   
     }

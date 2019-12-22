@@ -35,7 +35,7 @@
                     <td class="align-middle" ><?= $data['la_date']; ?></td>
                     <td class="align-middle" ><?= $data['contenu']; ?></td>
                     <td class="align-middle" ><a href="/pro4/valider-com/<?= $data['id']; ?>" class="btn btn-success">Valider</a></td>
-                    <td class="align-middle" ><a href="/pro4/supprimer-com/<?= $data['id']; ?>" id="btnSup" class="btn btn-danger">Supprimer</a></td>
+                    <td class="align-middle" ><a href="/pro4/supprimer-com/<?= $data['id']; ?>" class="btn btnSup btn-danger">Supprimer</a></td>
                 </tr>
                 <?php }?>
             </tbody>

@@ -16,14 +16,22 @@ class ManageAdmin extends DataBase
             $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
             $mail = htmlspecialchars($_POST['email']);
             if (!empty($pseudo) and !empty($mdp) and !empty($mail)) {
-                $insert = $conn->prepare("INSERT INTO utilisateur (pseudo, mot_de_passe, email) VALUES (:pseudo, :mdp, :email)");
-                $insert->execute([':pseudo'=>$pseudo, ':mdp'=>$mdp, ':email'=>$mail]);
-                $_SESSION['message'] = "Administrateur ajouté.";
-                $_SESSION['msgtype'] = "success";
-                header('location:/pro4/gestion-admin');
+                $verify = $conn->prepare("SELECT pseudo, email FROM utilisateur WHERE pseudo = :pseudo OR email = :email");
+                $verify->execute([':pseudo' => $pseudo, ':email' => $mail]);
+                if ($verify->rowCount() === 1) {
+                    $_SESSION['message'] = "Votre pseudo ou email et déjà utilisé.<br>Veuillez consulter la liste des admins pour ne pas rajouter de doublons";
+                    $_SESSION['msgtype'] = "danger";
+                    header('location:/pro4/gestion-admin');
+                }else{
+                    $insert = $conn->prepare("INSERT INTO utilisateur (pseudo, mot_de_passe, email) VALUES (:pseudo, :mdp, :email)");
+                    $insert->execute([':pseudo'=>$pseudo, ':mdp'=>$mdp, ':email'=>$mail]);
+                    $_SESSION['message'] = "Administrateur ajouté.";
+                    $_SESSION['msgtype'] = "success";
+                    header('location:/pro4/gestion-admin');
+                }
             } else {
-                $_SESSION['message'] = "Veuillez remplir les champs!.";
-                $_SESSION['msgtype'] = "warning";
+                $_SESSION['message'] = "Une erreur s'est produite.";
+                $_SESSION['msgtype'] = "danger";
             }
         }
     }
@@ -72,16 +80,11 @@ class ManageAdmin extends DataBase
                     $_SESSION['id'] = $data['id'];
                     if (!empty($_SESSION['id'])) {
                         header('location:/pro4/admin');
-                        $_SESSION['message'] = "Bienvenue à votre espace d'administration " . $pseudo . ".";
-                        $_SESSION['msgtype'] = "success";
                     }
-                } else {
-                    $_SESSION['message'] = "Données invalides!";
-                    $_SESSION['msgtype'] = "danger";
                 }
             }else {
-                $_SESSION['message'] = "Veuillez remplir les champs!";
-                $_SESSION['msgtype'] = "warning";
+                $_SESSION['message'] = "Données invalides!";
+                $_SESSION['msgtype'] = "danger";
             }
         }
     }

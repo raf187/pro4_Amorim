@@ -43,7 +43,11 @@ class FrontController{
         $conn = new Comments();
         $report = $conn->reportComment($id);
     }
-    
-
+    public function erreur404(){
+        require './view/frontend/404.php';
+    }
+    public function article404(){
+        require './view/frontend/404chapter.php';
+    }
 
 }

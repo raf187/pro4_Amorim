@@ -11,6 +11,9 @@ $router->get('/contact', 'FrontController@contact');
 $router->get('/chapitre-numero/:id' , 'FrontController@displayChapter')->with('id', '[0-9]+');
 $router->post('/chapitre-numero/:id_article' , 'FrontController@comments')->with('id_article', '[0-9]+');
 $router->get('/signaler/:id' , 'FrontController@reportComment')->with('id', '[0-9]+');
+$router->get('/404' , 'FrontController@erreur404');
+$router->get('/404-article' , 'FrontController@article404');
+
 //BACKEND
 //gestion chapitres
 $router->get('/chapitres-admin', 'BackController@displayChapter');
@@ -25,11 +28,12 @@ $router->get('/commentaires-admin', 'BackController@displayComments');
 $router->get('/valider-com/:id', 'BackController@validateComment')->with('id', '[0-9]+');
 $router->get('/supprimer-com/:id', 'BackController@deleteComments')->with('id', '[0-9]+');
 //gestion des administrateurs
-$router->get('/gestion-admin', 'BackController@createAdmin');
-$router->post('/gestion-admin', 'BackController@createAdmin');
+$router->get('/nouveau-admin', 'BackController@createAdmin');
+$router->post('/nouveau-admin', 'BackController@createAdmin');
 $router->get('/modifier-admin/:id' , 'BackController@updateAdmin')->with('id', '[0-9]+');
 $router->post('/modifier-admin/:id' , 'BackController@updateAdmin')->with('id', '[0-9]+');
 $router->get('/effacer-admin/:id' , 'BackController@deleteAdmin')->with('id', '[0-9]+');
+$router->get('/gestion-admin' , 'BackController@displayAdmin');
 //message
 $router->get('/message-admin' , 'BackController@displayMessage');
 $router->post('/contact' , 'BackController@postMessage');

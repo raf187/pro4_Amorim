@@ -2,39 +2,7 @@
 
 <?php ob_start(); ?>
 <!-- button pour ajouter admin -->
-<button id="ajoutAdmin" type="button" name="ajoutAdmin" class="btn btn-info col-md-4">Ajouter un nouvel administrateur</button>
-
-<!-- formulaire pour poster info nouveau admin -->
-<form id="formAdmin" method="POST" class="d-none form-horizontal">
-    <div class="card mt-5">
-        <div class="card-header">
-            <h3>Ajouter un nouvel administrateur</h3>
-        </div>
-        <div class="card-body">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <th class="align-middle"  scope="col">
-                            <input id="infoAdmin pseudo" name="pseudo" type="text" placeholder="Pseudo" class="form-control input-md" required="">
-                        </th>
-                        <th class="align-middle"  scope="col">
-                            <input id="infoAdmin mdp" name="mdp" type="text" placeholder="Mot de passe" class="form-control input-md" required="">
-                        </th>
-                        <th class="align-middle"  scope="col">
-                            <input id="infoAdmin email" name="email" type="email" placeholder="Email" class="form-control input-md" required="">
-                        </th>
-                        <th class="align-middle"  scope="col">
-                            <button id="btnAddAdmin" type="submit" name="btnAddAdmin" class="btn btn-success">Ajouter</button>
-                        </th>
-                        <th class="align-middle"  scope="col">
-                            <button id="btnAnnuler" name="btnAnnuler" class="btn btn-danger">Annuler</button>
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</form>
+<a href="/pro4/nouveau-admin" class="btn btn-info col-md-4">Ajouter un nouvel administrateur</a>
 <!-- liste des admins autorises -->
 <div class="card mt-5">
     <div class="card-header">

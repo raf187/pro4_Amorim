@@ -26,6 +26,8 @@ class Comments extends DataBase{
         $getId->execute([':id' => $id]);      
         $chapter = $getId->fetch();
         header('location: /pro4/chapitre-numero/' . $chapter['id_article']);
+        $_SESSION['message'] = "Le commentaire a bien été signalé";
+        $_SESSION['msgtype'] = "success";
     }
 
 }

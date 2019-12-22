@@ -51,169 +51,99 @@ body {
 .nav-list .nav-link {
   text-align: center;
   font-size: 26px;
-  margin: 10px 45px;
+  margin: 0px 45px;
   color: #000;
+  color: #999da0;
 }
 
 .nav-list .nav-link:hover {
-  text-shadow: 0 0 12px #696876;
+  text-shadow: 2px 2px 2px #696876;
 }
 
 .nav-list i {
   font-size: 40px;
+  color: #999da0;
 }
 
 .nav-list a {
-  text-shadow: 0 0 1px #696876;
+  text-shadow: 1px 1px 1px #696876;
 }
 
-.border-primary {
-  text-align: center;
-  width: 20%;
-  margin: 10% auto;
-  border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: solid 2px #fff;
-  -webkit-box-shadow: 0 0 10px #696876;
-          box-shadow: 0 0 10px #696876;
-}
-
-.border-primary .card-header {
-  font-size: 34px;
-  color: #fff;
-  background-color: rgba(52, 58, 65, 0.8);
-  border-radius: 20px 20px 0 0;
-}
-
-.border-primary .btn {
-  margin: 5px 20px 0 20px;
-  border-radius: 10px;
-}
-
-.border-primary input {
-  border-radius: 10px;
-}
-
-.jumbotron {
-  width: 60%;
-  padding: 40px;
-  margin: 8%  auto;
-  margin-bottom: 35px;
-  border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 10px #696876;
-          box-shadow: 0 0 10px #696876;
-}
-
-.jumbotron h1 {
-  padding-bottom: 20px;
-}
-
-.jumbotron .hr {
-  text-align: center;
-}
-
-.container {
-  margin-top: 30px;
-  margin: auto;
-  width: 100%;
-  justify-items: center;
-}
-
-.container .jumbotron {
-  width: 100%;
-}
-
-.container img {
-  width: 40%;
-  margin-bottom: -330px;
-  margin-left: 30%;
-}
-
-.container .jumbotron {
-  padding-top: 245px;
-}
-
-.auteur {
-  text-align: center;
-}
-
-.form-contact {
-  width: 60%;
-  margin: 8%  auto;
-  border-radius: 0 25px 0 25px;
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 10px #696876;
-          box-shadow: 0 0 10px #696876;
-}
-
-.form-contact .card-header {
-  text-align: center;
-}
-
-.formCom label {
-  font-size: 18px;
-  font-weight: bold;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
-.formCom legend {
-  text-align: center;
-}
-
-.comentCard {
-  width: 50%;
-  margin: 10px auto;
-  border-radius: 0 25px 0 25px;
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 10px #696876;
-          box-shadow: 0 0 10px #696876;
-}
-
-.comentCard .card-body {
-  background-color: rgba(255, 255, 255, 0.86);
-}
-
-.comentCard i {
-  font-size: 18px;
-  margin-left: 5px;
-}
-
-.contaierIndexChapter {
-  margin-top: 110px;
-}
-
-.indexChapter {
-  width: 60%;
-  margin: 20px auto;
-  margin-bottom: 20px;
-  border-radius: 0 25px 0 25px;
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 0 0 10px #696876;
-          box-shadow: 0 0 10px #696876;
-}
-
-.indexChapter h3 {
-  font-size: 24px;
-}
-
-.indexChapter .card-body {
-  border-radius: 0 0 0 25px;
-  background-color: rgba(255, 255, 255, 0.86);
-}
-
-.indexTitre {
-  font-size: 38px;
-  font-weight: bold;
-  margin: 30px;
-}
-
-h1, h2, h3, h4, h5, h6, a {
+h1, h2, h3, h4, h5, h6, a, button {
+  text-shadow: 0.5px 0.5px 0.5px #000;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
 p {
   font-family: 'Lora', serif;
+}
+
+.erreur404 {
+  margin-top: 35%;
+}
+
+.erreur404 h3 {
+  font-size: 75px;
+  color: #999da0;
+}
+
+.erreur404 h4 {
+  font-size: 35px;
+  color: #fff;
+}
+
+.jumbotron {
+  border-radius: 10px;
+  background-color: rgba(234, 236, 239, 0.85);
+}
+
+.contHome {
+  margin-top: 120px;
+}
+
+.contHome .card {
+  background-color: rgba(234, 236, 239, 0.85);
+}
+
+.contIndex {
+  margin-top: 120px;
+}
+
+.contIndex .card {
+  background-color: rgba(234, 236, 239, 0.85);
+}
+
+.contAuthor {
+  margin-top: 120px;
+}
+
+.contAuthor .jumbotron {
+  margin-top: -200px;
+  padding-top: 190px;
+}
+
+.contForm {
+  margin-top: 120px;
+}
+
+.contForm .card {
+  background-color: rgba(234, 236, 239, 0.85);
+}
+
+.contShowChap {
+  margin-top: 120px;
+}
+
+.contShowChap .card {
+  background-color: rgba(234, 236, 239, 0.85);
+}
+
+.contLogin {
+  margin-top: 190px;
+}
+
+.contLogin .card {
+  background-color: rgba(234, 236, 239, 0.85);
+  border-radius: 20px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,7 +1,7 @@
 <?php $title = ('Billet simple pour l\'Alaska - Auteur'); ?>
 <?php ob_start(); ?>
-<div class="container">
-    <img src="/pro4/public/img/auteur.jpg" alt="Photo de un auteur" class="border border-primary rounded-circle">
+<div class="container contAuthor text-center">
+    <img src="/pro4/public/img/auteur.jpg" alt="Photo de un auteur" class="w-45 border border-primary rounded-circle">
     <div class="jumbotron">
             <h1 class="auteur display-4">Jean Forteroche!</h1>
             <p class="lead">

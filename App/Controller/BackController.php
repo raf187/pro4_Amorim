@@ -106,8 +106,17 @@ class BackController
     {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             $conn = new ManageAdmin();
-            $display = $conn->displayAdmin();
             $create = $conn->createAdmin();
+            require './view/backend/newAdmin.php';
+        } else {
+            header('location:/pro4/connexion');
+        }
+    }
+    public function displayAdmin()
+    {
+        if (isset($_SESSION) && !empty($_SESSION['id'])) {
+            $conn = new ManageAdmin();
+            $display = $conn->displayAdmin();
             require './view/backend/manageAdmin.php';
         } else {
             header('location:/pro4/connexion');
