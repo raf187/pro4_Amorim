@@ -46,11 +46,11 @@
                     </ul>
                 </div>
             </nav>
-                <div class="phpContent">
+                <div class="container">
                     <?= $content ?>
                 </div>
             </main>
-            <footer class="footer mt-auto py-3">
+            <footer class="footerWeb footer mt-auto py-3">
                 <div class="container">
                     <span class="">Ce site et un projet étudiant de <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>.</span>
                 </div>

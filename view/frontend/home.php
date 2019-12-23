@@ -26,7 +26,7 @@
         while ($data = $lastChapter->fetch())
         {
         ?>
-        <div class="card">
+        <div class="card mb-md-4">
             <div class="card-header">
                 <h3><?= $data['titre']; ?></h3>
             </div>

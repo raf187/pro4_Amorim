@@ -1,4 +1,4 @@
-<?php $title = ('404'); ?>
+<?php $title = ('Erreur 404'); ?>
 
 <?php ob_start(); ?>
 <div class="erreur404 text-center container justify-content-center">

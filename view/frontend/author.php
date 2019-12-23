@@ -1,4 +1,4 @@
-<?php $title = ('Billet simple pour l\'Alaska - Auteur'); ?>
+<?php $title = ('Auteur'); ?>
 <?php ob_start(); ?>
 <div class="container contAuthor text-center">
     <img src="/pro4/public/img/auteur.jpg" alt="Photo de un auteur" class="w-45 border border-primary rounded-circle">

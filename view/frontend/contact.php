@@ -1,4 +1,4 @@
-<?php $title = ('Billet simple pour l\'Alaska - Contact'); ?>
+<?php $title = ('Contact'); ?>
 <?php ob_start(); ?>
 <div class="container contForm">
     <div class="card form-contact col-md-10 offset-md-1">

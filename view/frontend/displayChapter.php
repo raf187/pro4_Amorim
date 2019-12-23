@@ -1,4 +1,4 @@
-<?php $title = ('Chapitre' . $id); ?>
+<?php $title = ('Chapitre ' . $id); ?>
 <?php ob_start();
 if(isset($id)) {
     if($display->rowCount() == 1) {
@@ -60,7 +60,7 @@ if(isset($id)) {
     <h3 class="text-primary text-center">Les commentaires :</h3>
     <?php
     while ($data = $coms->fetch()){ ?>
-    <div class="card border-dark col-md-10 offset-md-1">
+    <div class="card mb-md-4 border-dark col-md-10 offset-md-1">
         <div class="card-header">Par <?= $data['pseudo'] ?> le <?= $data['la_date'] ?></div>
         <div class="card-body text-dark">
             <p class="card-text"><?= $data['contenu'] ?></p>

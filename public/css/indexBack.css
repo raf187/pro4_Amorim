@@ -14,12 +14,6 @@ header {
   padding: 5px;
 }
 
-.phpContent {
-  text-align: center;
-  margin: 40px auto;
-  width: 80%;
-}
-
 .navbar {
   background-color: rgba(52, 58, 65, 0.7);
   padding: 12px;
@@ -39,24 +33,20 @@ header {
   padding-right: 30px;
 }
 
-footer {
-  background-color: rgba(52, 58, 65, 0.7);
+.footerWeb {
+  background-color: rgba(52, 58, 65, 0.8);
   color: #999da0;
   text-align: center;
   font-size: 18px;
 }
 
-footer a {
+.footerWeb a {
   text-decoration: none;
   color: #007bff;
 }
 
-footer a:hover {
+.footerWeb a:hover {
   text-decoration: none;
-}
-
-.btn {
-  border-radius: 10px;
 }
 
 h1, h2, h3, h4, h5, h6, a, button {
@@ -65,5 +55,9 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 p {
   font-family: 'Lora', serif;
+}
+
+.contAdmin {
+  margin-top: 10%;
 }
 /*# sourceMappingURL=indexBack.css.map */
