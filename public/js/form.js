@@ -6,10 +6,6 @@ class Form{
         this.ajoutAdmin = document.querySelector("#ajoutAdmin");
         this.anullAjout = document.querySelector("#btnAnuller");
         
-        this.formAdmin = document.querySelector("#formAdmin");
-        this.btnAddAdmin = document.querySelector("#btnAddAdmin");
-        this.btnDelete = document.querySelector(".btnSup");
-        
     }
 
     addComentForm(){
@@ -19,22 +15,27 @@ class Form{
         })
     }
     removeComentForm(){
-        $(this.sendBtn).click((e) => {
-            e.preventDefault();
             $(this.btnAjout).removeClass('d-none');
             $(this.formComs).addClass('d-none');
-        })
-}
-    deleteComfirm(){
-            $(this.btnDelete).click(function () {
-                confirm("Etes vous sur de voulloir supprimer ?");
+    }
+    confirmDelete(){
+        $(window).ready(function() {
+        $(".btnSup").on('click touchstart', function() {
+            return confirm('Êtes vous sur de vouloir supprimer?');
+        });
+    });
+    }
+    confirmSignal() {
+        $(window).ready(function() {
+            $(".btnSignal").on('click touchstart', function() {
+                return confirm('Êtes vous sur de vouloir signaler ce commentaire?');
             });
+        })
     }
 }
 
 let set = new Form();
 set.addComentForm();
 set.removeComentForm();
-// set.addAdminForm();
-// set.removeAdminForm();
-set.deleteComfirm();
+set.confirmDelete();
+set.confirmSignal();

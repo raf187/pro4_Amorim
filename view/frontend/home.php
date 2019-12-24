@@ -4,8 +4,8 @@
 <div class="container contHome">
     <div class="jumbotron">
         <h1 class=" text-center">Billet simple pour l'Alaska</h1>
-        <p class="lead mt-md-3">
-            Bienvenue sur mon premier livre en ligne, Billet simple pour l'Alaska.<br>Rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.
+        <p class="lead my-md-5 text-center">
+        À l'occasion de la sortie de mon dixième roman, j'ai décidé de le rendre accessible à tous en le diffusant gratuitement en ligne. Il sera diffusé, à l'image d'une série, par épisodes à raison d'un chapitre par mois. Cette démarche me permettra d'améliorer le roman en fonction de vos retours. Je vous invite donc à laisser vos impressions sur chaque chapitre.
         </p>
         <hr>
         <ul class="nav nav-list justify-content-center">

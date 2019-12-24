@@ -9,7 +9,7 @@ class Comments extends DataBase{
             if (!empty($_POST['pseudo']) AND !empty($_POST['comentaire'])) {
                 $insert = $conn->prepare("INSERT INTO comentaires (pseudo, contenu, la_date, id_article) VALUES (:pseudo, :contenu, Now(), :id_article)");
                 $insert->execute([':pseudo' => htmlspecialchars($_POST['pseudo']), ':contenu' => htmlspecialchars($_POST['comentaire']), ':id_article' => $id_article]);
-                $_SESSION['message'] = "Votre commentaire a bien été envoyé";
+                $_SESSION['message'] = "Votre commentaire a bien été ajouté";
                 $_SESSION['msgtype'] = "success";
                 header('location:' . $id_article);
             } else {

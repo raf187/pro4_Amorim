@@ -1,7 +1,7 @@
 <?php $title = ('Administrateurs'); ?>
 
 <?php ob_start(); ?>
-<div class="container text-center">
+<div class="text-center">
     <!-- button pour ajouter admin -->
     <a href="/pro4/nouveau-admin" class="btn btn-info mt-5 col-md-4">Ajouter un nouvel administrateur</a>
     <!-- liste des admins autorises -->
@@ -19,7 +19,7 @@
         ?>
         </div>
         <?php } ?>
-            <table class="table table-striped">
+            <table class="table table-responsive-md table-striped">
                 <thead>
                     <tr>
                         <th class="align-middle"  scope="col">Id</th>

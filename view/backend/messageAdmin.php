@@ -16,7 +16,7 @@
         ?>
         </div>
         <?php } ?>
-            <table class="table table-striped">
+            <table class="table table-responsive-md table-striped">
             <thead>
                 <tr>
                 <th class="align-middle" scope="col">Auteur</th>
