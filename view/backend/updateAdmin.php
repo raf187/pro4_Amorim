@@ -15,7 +15,7 @@
                                 <input id="infoAdmin mdp" name="mdp" type="text" placeholder="Mot de passe crypté" class="mt-3 form-control input-md">
                                 <input id="infoAdmin email" name="email" type="email" placeholder="Email" value="<?= $data['email']; ?>" class="mt-3 form-control input-md" required="">
                                 <button id="modAdmin" name="modAdmin" type="submit" class="btn mt-3 btn-success">Modifier</button>
-                                <a href="/pro4/gestion-admin" class="btn mt-3 btn-danger">Annuler</a>
+                                <a href="/forteroche/gestion-admin" class="btn mt-3 btn-danger">Annuler</a>
                             </div>
                         <?php } ?>
                     </tbody>

@@ -21,13 +21,13 @@ class ManageAdmin extends DataBase
                 if ($verify->rowCount() === 1) {
                     $_SESSION['message'] = "Votre pseudo ou email et déjà utilisé.<br>Veuillez consulter la liste des admins pour ne pas rajouter de doublons";
                     $_SESSION['msgtype'] = "danger";
-                    header('location:/pro4/gestion-admin');
+                    header('location:/forteroche/gestion-admin');
                 }else{
                     $insert = $conn->prepare("INSERT INTO utilisateur (pseudo, mot_de_passe, email) VALUES (:pseudo, :mdp, :email)");
                     $insert->execute([':pseudo'=>$pseudo, ':mdp'=>$mdp, ':email'=>$mail]);
                     $_SESSION['message'] = "Administrateur ajouté.";
                     $_SESSION['msgtype'] = "success";
-                    header('location:/pro4/gestion-admin');
+                    header('location:/forteroche/gestion-admin');
                 }
             } else {
                 $_SESSION['message'] = "Une erreur s'est produite.";
@@ -48,7 +48,7 @@ class ManageAdmin extends DataBase
             if (!empty($_POST['pseudo']) && !empty($_POST['email'])) {
                 $update = $conn->prepare("UPDATE utilisateur SET pseudo = :pseudo, mot_de_passe = :mot_de_passe, email = :email WHERE id = :id ");
                 $update->execute([':pseudo' => $_POST['pseudo'], ':mot_de_passe' => $_POST['mdp'], ':email' => $_POST['email'],':id' => $id]);
-                header('location:/pro4/gestion-admin');
+                header('location:/forteroche/gestion-admin');
                 $_SESSION['message'] = "Administrateur mis à jour.";
                 $_SESSION['msgtype'] = "success";
             } else {
@@ -62,7 +62,7 @@ class ManageAdmin extends DataBase
         $conn = $this->connect();
         $delete = $conn->prepare("DELETE FROM utilisateur WHERE id = :id");
         $delete->execute([':id' => $id]);
-        header('location:/pro4/gestion-admin');
+        header('location:/forteroche/gestion-admin');
         $_SESSION['message'] = "Administrateur supprimé.";
         $_SESSION['msgtype'] = "danger";
     }
@@ -79,7 +79,7 @@ class ManageAdmin extends DataBase
                 if (password_verify($mdp, $data['mot_de_passe'])) {
                     $_SESSION['id'] = $data['id'];
                     if (!empty($_SESSION['id'])) {
-                        header('location:/pro4/admin');
+                        header('location:/forteroche/admin');
                     }
                 }
             }else {

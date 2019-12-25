@@ -4,10 +4,10 @@ if(isset($id)) {
     if($display->rowCount() == 1) {
         $data = $display->fetch();
     } else {
-        header('location: /pro4/404-article');
+        header('location: /forteroche/404-article');
     }
 } else{
-    header('location: /pro4/404-article');
+    header('location: /forteroche/404-article');
 }
 ?>
 
@@ -66,7 +66,7 @@ if(isset($id)) {
             <p class="card-text"><?= $data['contenu'] ?></p>
         </div>
         <div class="card-footer">
-            <small class="offset-md-9 text-muted">Signaler ce commentaire <a class="btnSignal" href="/pro4/signaler/<?= $data['id']; ?>"><i class="fas fa-bell"></i></a></small>
+            <small class="offset-md-9 text-muted">Signaler ce commentaire <a class="btnSignal" href="/forteroche/signaler/<?= $data['id']; ?>"><i class="fas fa-bell"></i></a></small>
         </div>
     </div>
 

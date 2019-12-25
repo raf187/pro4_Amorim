@@ -33,8 +33,8 @@
           <td class="align-middle"><?= $data['titre']; ?></td>
           <td class="align-middle"><?= $data['pseudo']; ?></td>
           <td class="align-middle"><?= $data['la_date']; ?></td>
-          <td class="align-middle"><a href="/pro4/modifier-chapitre/<?= $data['id']; ?>"><input class="btn btn-success" type="button" value="Modifier"></a></td>
-          <td class="align-middle"><a href="/pro4/effacer-chapitre/<?= $data['id']; ?>" class="btn btnSup btn-danger">Supprimer</a></td>
+          <td class="align-middle"><a href="/forteroche/modifier-chapitre/<?= $data['id']; ?>"><input class="btn btn-success" type="button" value="Modifier"></a></td>
+          <td class="align-middle"><a href="/forteroche/effacer-chapitre/<?= $data['id']; ?>" class="btn btnSup btn-danger">Supprimer</a></td>
         </tr>
         <?php }?>
       </tbody>

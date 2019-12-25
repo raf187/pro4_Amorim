@@ -13,7 +13,7 @@
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                <p><?= $data['contenu'] . '. '; ?><br><cite class="text-primary" title="Source Title"><a href="/pro4/chapitre-numero/<?= $data['id'] ?>"">Lire la suite...</cite></a></p>
+                <p><?= $data['contenu'] . '. '; ?><br><cite class="text-primary" title="Source Title"><a href="/forteroche/chapitre-numero/<?= $data['id'] ?>"">Lire la suite...</cite></a></p>
                 <footer class="blockquote-footer"><?= 'Par ' . $data['pseudo']?><cite title="Source Title"><?= ' le ' . $data['la_date']; ?></cite></footer>
                 </blockquote>
             </div>

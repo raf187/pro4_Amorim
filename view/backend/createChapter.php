@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-3 offset-md-9">
-                            <a href="/pro4/admin" id="btnAnul" name="btnAnul" class="btn btn-danger">Annuler</a>
+                            <a href="/forteroche/admin" id="btnAnul" name="btnAnul" class="btn btn-danger">Annuler</a>
                             <input type="submit" id="btnPub" name="btnPub" class="btn btn-primary" value="Publier">
                         </div>
                     </div>

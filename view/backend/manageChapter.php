@@ -40,7 +40,7 @@ if(isset($id)) {
                     </div>
                     <div class="form-group">
                         <div class="col-md-3 offset-md-9">
-                            <a href="/pro4/chapitres-admin" id="button1id" name="button1id" class="btn btn-danger">Annuler</a>
+                            <a href="/forteroche/chapitres-admin" id="button1id" name="button1id" class="btn btn-danger">Annuler</a>
                             <button id="btnModChap" name="btnModChap" class="btn btn-success">Modifier</button>
                         </div>
                     </div>

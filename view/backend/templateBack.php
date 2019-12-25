@@ -14,7 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
     <script src="https://cdn.tiny.cloud/1/bnbduad1phrfj1pd2rzog44qm13pvuu41gh4j1qmomm7k0j1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'.textchapter',});</script>
-    <link rel="stylesheet" href="/pro4/public/css/indexback.css">
+    <link rel="stylesheet" href="/forteroche/public/css/indexback.css">
     <title><?= $title ?></title>
 </head>
     <body class="d-flex flex-column h-100">
@@ -22,30 +22,30 @@
             <header>
                 <h1>Billet simple pour l'Alaska</h1>
             </header>
-            <nav class="navbar navbar-expand-lg navbar navbar-dark">
-                <a class="navbar-brand" href="/pro4/admin">Espace d'administration</a>
+            <nav class="navbar navbar-expand-lg navbar mb-md-5 navbar-dark">
+                <a class="navbar-brand" href="/forteroche/admin">Espace d'administration</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav ml-md-5">
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/nouveau-chapitre">Nouveau Chapitre</a>
+                        <a class="nav-link" href="/forteroche/nouveau-chapitre">Nouveau Chapitre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/chapitres-admin">Gestion Chapitres</a>
+                        <a class="nav-link" href="/forteroche/chapitres-admin">Gestion Chapitres</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/commentaires-admin">Commentaires</a>
+                        <a class="nav-link" href="/forteroche/commentaires-admin">Commentaires</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/message-admin">Messages</a>
+                        <a class="nav-link" href="/forteroche/message-admin">Messages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/gestion-admin">Admin</a>
+                        <a class="nav-link" href="/forteroche/gestion-admin">Admin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/deconnexion">Déconnexion</a>
+                        <a class="nav-link" href="/forteroche/deconnexion">Déconnexion</a>
                     </li>
                     </ul>
                 </div>
@@ -59,7 +59,7 @@
                     <span class="">Ce site et un projet étudiant de <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>.</span>
                 </div>
             </footer>
-        <script src="/pro4/public/js/form.js"></script>
+        <script src="/forteroche/public/js/form.js"></script>
         
     </body>
 </html>

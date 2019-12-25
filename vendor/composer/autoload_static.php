@@ -29,9 +29,15 @@ class ComposerStaticInit8c78dd990c63b23fc895a5837cdf9053
     );
 
     public static $classMap = array (
+        'App\\Controller\\BackController' => __DIR__ . '/../..' . '/App/Controller/BackController.php',
         'App\\Controller\\FrontController' => __DIR__ . '/../..' . '/App/Controller/FrontController.php',
+        'App\\Model\\AdminChapter' => __DIR__ . '/../..' . '/App/Model/adminChapter.php',
+        'App\\Model\\AdminComments' => __DIR__ . '/../..' . '/App/Model/adminComments.php',
+        'App\\Model\\Comments' => __DIR__ . '/../..' . '/App/Model/comments.php',
         'App\\Model\\DataBase' => __DIR__ . '/../..' . '/App/Model/database.php',
-        'App\\Model\\Read' => __DIR__ . '/../..' . '/App/Model/model.php',
+        'App\\Model\\FrontChapter' => __DIR__ . '/../..' . '/App/Model/frontChapter.php',
+        'App\\Model\\ManageAdmin' => __DIR__ . '/../..' . '/App/Model/manageAdmin.php',
+        'App\\Model\\MessageAdmin' => __DIR__ . '/../..' . '/App/Model/messageAdmin.php',
         'App\\Router\\Route' => __DIR__ . '/../..' . '/App/Router/Route.php',
         'App\\Router\\Router' => __DIR__ . '/../..' . '/App/Router/Router.php',
     );

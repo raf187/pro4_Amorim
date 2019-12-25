@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <div class="text-center">
     <!-- button pour ajouter admin -->
-    <a href="/pro4/nouveau-admin" class="btn btn-info mt-5 col-md-4">Ajouter un nouvel administrateur</a>
+    <a href="/forteroche/nouveau-admin" class="btn btn-info mt-5 col-md-4">Ajouter un nouvel administrateur</a>
     <!-- liste des admins autorises -->
     <div class="card mt-5">
         <div class="card-header">
@@ -35,8 +35,8 @@
                             <td class="align-middle" ><?= $data['id']; ?></td>
                             <td class="align-middle" ><?= $data['pseudo']; ?></td>
                             <td class="align-middle" ><?= $data['email']; ?></td>
-                            <td class="align-middle" ><a href="/pro4/modifier-admin/<?= $data['id']; ?>" class="btn btn-success">Modifier</a></td>
-                            <td class="align-middle" ><a href="/pro4/effacer-admin/<?= $data['id']; ?>" class="btnSup btn btn-danger">Supprimer</a></td>
+                            <td class="align-middle" ><a href="/forteroche/modifier-admin/<?= $data['id']; ?>" class="btn btn-success">Modifier</a></td>
+                            <td class="align-middle" ><a href="/forteroche/effacer-admin/<?= $data['id']; ?>" class="btnSup btn btn-danger">Supprimer</a></td>
                         </tr>
                         <?php } 
                         $display->closeCursor();?>

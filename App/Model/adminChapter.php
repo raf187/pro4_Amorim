@@ -15,7 +15,7 @@ class AdminChapter extends DataBase{
             if (!empty($_POST['titre']) && !empty($_POST['pseudo']) && !empty($_POST['contenu'])) {
                 $update = $conn->prepare("UPDATE articles SET titre = :titre, pseudo = :pseudo, contenu = :contenu WHERE id = :id ");
                 $update->execute([':titre' => htmlspecialchars($_POST['titre']), ':pseudo' => htmlspecialchars($_POST['pseudo']), ':contenu' => $_POST['contenu'],':id' => $id]);
-                header('location:/pro4/chapitres-admin');
+                header('location:/forteroche/chapitres-admin');
                 $_SESSION['message'] = "Votre chapitre a bien été mis à jour.";
                 $_SESSION['msgtype'] = "success";
             } else {
@@ -31,7 +31,7 @@ class AdminChapter extends DataBase{
         $comm->execute([':id' => $id]);
         $delete = $conn->prepare("DELETE FROM articles WHERE id = :id");
         $delete->execute([':id' => $id]);
-        header('location:/pro4/chapitres-admin');
+        header('location:/forteroche/chapitres-admin');
         $_SESSION['message'] = "Chapitre supprimé.";
         $_SESSION['msgtype'] = "danger";
     }

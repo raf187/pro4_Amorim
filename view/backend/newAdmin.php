@@ -11,7 +11,7 @@
                 <input id="infoAdmin mdp" name="mdp" type="text" placeholder="Mot de passe" class="mt-3 form-control input-md" required="">
                 <input id="infoAdmin email" name="email" type="email" placeholder="Email" class="mt-3 form-control input-md" required="">
                 <button id="btnAddAdmin" type="submit" name="btnAddAdmin" class="mt-3 btn btn-success">Ajouter</button>
-                <a  href="/pro4/gestion-admin" name="btnAnuller" class="mt-3 btn btn-danger">Annuler</a>
+                <a  href="/forteroche/gestion-admin" name="btnAnuller" class="mt-3 btn btn-danger">Annuler</a>
             </div>
         </div>
     </form>

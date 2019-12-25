@@ -20,13 +20,13 @@ class Router{
     }
     public function match(){
         if(!isset($this->routes[$_SERVER['REQUEST_METHOD']])){
-            header("location:/pro4/404");
+            header("location:/forteroche/404");
         }
         foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route){
             if($route->check($this->url)){
                 return $route->callAction();
             } 
         }
-        header("location:/pro4/404");
+        header("location:/forteroche/404");
     }
 }

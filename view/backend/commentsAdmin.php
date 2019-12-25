@@ -31,8 +31,8 @@
                         <td class="align-middle" ><?= $data['id_article']; ?></td>
                         <td class="align-middle" ><?= $data['pseudo']; ?></td>
                         <td class="align-middle" ><?= $data['contenu']; ?></td>
-                        <td class="align-middle" ><a href="/pro4/valider-com/<?= $data['id']; ?>" class="btn btn-success">Valider</a></td>
-                        <td class="align-middle" ><a href="/pro4/supprimer-com/<?= $data['id']; ?>" class="btn btnSup btn-danger">Supprimer</a></td>
+                        <td class="align-middle" ><a href="/forteroche/valider-com/<?= $data['id']; ?>" class="btn btn-success">Valider</a></td>
+                        <td class="align-middle" ><a href="/forteroche/supprimer-com/<?= $data['id']; ?>" class="btn btnSup btn-danger">Supprimer</a></td>
                     </tr>
                     <?php }?>
                 </tbody>

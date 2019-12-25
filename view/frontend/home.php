@@ -10,13 +10,13 @@
         <hr>
         <ul class="nav nav-list justify-content-center">
             <li class="nav-item">
-                <a class="nav-link" href="/pro4/chapitre"><i class="fas fa-book-open"></i><br>Chapitres</a>
+                <a class="nav-link" href="/forteroche/chapitre"><i class="fas fa-book-open"></i><br>Chapitres</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/pro4/auteur"><i class="fas fa-user-edit"></i><br>Auteur</a>
+                <a class="nav-link" href="/forteroche/auteur"><i class="fas fa-user-edit"></i><br>Auteur</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/pro4/contact"><i class="fas fa-envelope-open-text"></i><br>Contact</a>
+                <a class="nav-link" href="/forteroche/contact"><i class="fas fa-envelope-open-text"></i><br>Contact</a>
             </li>
         </ul>
     </div> 
@@ -33,7 +33,7 @@
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
                 <p><?= $data['contenu'] . '. '; ?><br>
-                <cite class="text-primary" title="Source Title"><a href="/pro4/chapitre-numero/<?= $data['id'] ?>"">Lire la suite...</cite></a></p>
+                <cite class="text-primary" title="Source Title"><a href="/forteroche/chapitre-numero/<?= $data['id'] ?>"">Lire la suite...</cite></a></p>
                 <footer class="blockquote-footer"><?= 'Par ' . $data['pseudo']?><cite title="Source Title"><?= ' le ' . $data['la_date']; ?></cite></footer>
                 </blockquote>
             </div>

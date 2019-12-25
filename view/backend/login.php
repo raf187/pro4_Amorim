@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <div class="col-md-12">
                         <button type="submit" id="connect" name="connect" class="btn btn-primary">Connexion</button>
-                        <a href="/pro4" id="anull" name="anull" class="btn btn-danger">Annuler</a>
+                        <a href="/forteroche" id="anull" name="anull" class="btn btn-danger">Annuler</a>
                     </div>
                 </div>
             </form>

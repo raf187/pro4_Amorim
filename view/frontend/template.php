@@ -12,29 +12,29 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/pro4/public/css/index.css">
+    <link rel="stylesheet" href="/forteroche/public/css/index.css">
     <title><?= $title ?></title>
 </head>
     <body class="d-flex flex-column h-100">
         <main role="main" class="flex-shrink-0">
             <nav class="fixed-top navbar navbar-expand-lg navbar mb-md-5 navbar-dark">
-                <a class="navbar-brand" href="/pro4/">Billet simple pour l'Alaska</a>
+                <a class="navbar-brand" href="/forteroche/">Billet simple pour l'Alaska</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav ml-md-5">
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/">Accueil</a>
+                        <a class="nav-link" href="/forteroche/">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/chapitre">Chapitres</a>
+                        <a class="nav-link" href="/forteroche/chapitre">Chapitres</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/auteur">Auteur</a>
+                        <a class="nav-link" href="/forteroche/auteur">Auteur</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pro4/contact">Contact</a>
+                        <a class="nav-link" href="/forteroche/contact">Contact</a>
                     </li>
                     </ul>
                 </div>
@@ -48,6 +48,6 @@
                     <span class="">Ce site et un projet étudiant de <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>.</span>
                 </div>
             </footer>
-        <script src="/pro4/public/js/form.js"></script>
+        <script src="/forteroche/public/js/form.js"></script>
     </body>
 </html>

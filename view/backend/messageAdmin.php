@@ -29,7 +29,7 @@
             <tr >
                 <td class="align-middle"><?= $data['nom']; ?><br><?= $data['email']; ?></td>
                 <td class="align-middle"><strong>Objet : <?= $data['objet']; ?></strong><br><?= $data['contenu']; ?></td>
-                <td class="align-middle"><?= $data['la_date']; ?><br><a href="/pro4/effacer-message/<?= $data['id']; ?>" class="btn btnSup btn-danger">Supprimer</a></td>
+                <td class="align-middle"><?= $data['la_date']; ?><br><a href="/forteroche/effacer-message/<?= $data['id']; ?>" class="btn btnSup btn-danger">Supprimer</a></td>
             </tr>
             <?php }?>
             </tbody>

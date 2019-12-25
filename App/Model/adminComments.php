@@ -11,7 +11,7 @@ class AdminComments extends DataBase{
         $conn = $this->connect();
         $report = $conn->prepare("UPDATE comentaires SET signale = :false WHERE id = :id");
         $report->execute([':false' => 0, ':id' => $id]);
-        header('location:/pro4/commentaires-admin');
+        header('location:/forteroche/commentaires-admin');
         $_SESSION['message'] = "Commentaire validé.";
         $_SESSION['msgtype'] = "success";
     }
@@ -19,7 +19,7 @@ class AdminComments extends DataBase{
         $conn = $this->connect();
         $delete = $conn->prepare("DELETE FROM comentaires WHERE id = :id");
         $delete->execute([':id' => $id]);
-        header('location:/pro4/commentaires-admin');
+        header('location:/forteroche/commentaires-admin');
         $_SESSION['message'] = "Commentaire supprimé.";
         $_SESSION['msgtype'] = "danger";
     }

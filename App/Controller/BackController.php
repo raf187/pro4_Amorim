@@ -18,14 +18,14 @@ class BackController
     public function logout()
     {
         session_destroy();
-        header('location:/pro4');
+        header('location:/forteroche');
     }
     public function indexAdmin()
     {
         if (isset($_SESSION) && !empty($_SESSION['id'])) {
             require './view/backend/admin.php';
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     //Chapitre
@@ -36,7 +36,7 @@ class BackController
             $display = $conn->indexChapter();
             require './view/backend/chapterAdmin.php';
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
 
@@ -47,7 +47,7 @@ class BackController
             $create = $conn->createChapter();
             require './view/backend/createChapter.php';
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
 
@@ -59,7 +59,7 @@ class BackController
             $update = $conn->updateChapter($id);
             require('./view/backend/manageChapter.php');
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
 
@@ -69,7 +69,7 @@ class BackController
             $conn = new AdminChapter();
             $delete = $conn->deleteChapter($id);
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     //Commentaires
@@ -80,7 +80,7 @@ class BackController
             $display = $conn->displayComments();
             require('./view/backend/commentsAdmin.php');
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     public function deleteComments($id)
@@ -89,7 +89,7 @@ class BackController
             $conn = new AdminComments();
             $delete = $conn->deleteComment($id);
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     public function validateComment($id)
@@ -98,7 +98,7 @@ class BackController
             $conn = new AdminComments();
             $validate = $conn->validateComment($id);
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     //Administrateurs
@@ -109,7 +109,7 @@ class BackController
             $create = $conn->createAdmin();
             require './view/backend/newAdmin.php';
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     public function displayAdmin()
@@ -119,7 +119,7 @@ class BackController
             $display = $conn->displayAdmin();
             require './view/backend/manageAdmin.php';
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     public function updateAdmin($id)
@@ -130,7 +130,7 @@ class BackController
             $update = $conn->updateAdmin($id);
             require './view/backend/updateAdmin.php';
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     public function deleteAdmin($id)
@@ -139,7 +139,7 @@ class BackController
             $conn = new ManageAdmin();
             $delete = $conn->deleteAdmin($id);
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     //message
@@ -150,7 +150,7 @@ class BackController
             $display = $conn->displayMessage();
             require './view/backend/messageAdmin.php';
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     public function deleteMessage($id)
@@ -159,7 +159,7 @@ class BackController
             $conn = new MessageAdmin();
             $display = $conn->deleteMessage($id);
         } else {
-            header('location:/pro4/connexion');
+            header('location:/forteroche/connexion');
         }
     }
     public function postMessage()
