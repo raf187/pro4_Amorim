@@ -47,7 +47,7 @@ class ManageAdmin extends DataBase
         if (isset($_POST['modAdmin'])) {
             if (!empty($_POST['pseudo']) && !empty($_POST['email'])) {
                 $update = $conn->prepare("UPDATE utilisateur SET pseudo = :pseudo, mot_de_passe = :mot_de_passe, email = :email WHERE id = :id ");
-                $update->execute([':pseudo' => $_POST['pseudo'], ':mot_de_passe' => $_POST['mdp'], ':email' => $_POST['email'],':id' => $id]);
+                $update->execute([':pseudo' => $_POST['pseudo'], ':mot_de_passe' => password_hash($_POST['mdp'], PASSWORD_DEFAULT), ':email' => $_POST['email'],':id' => $id]);
                 header('location:/forteroche/gestion-admin');
                 $_SESSION['message'] = "Administrateur mis à jour.";
                 $_SESSION['msgtype'] = "success";
