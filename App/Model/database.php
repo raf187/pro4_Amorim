@@ -12,9 +12,9 @@ class DataBase{
 
     public function connect(){
         $this->host = 'localhost';
-        $this->user = 'root';
-        $this->passW = 'root';
-        $this->dbName = 'Forteroche';
+        $this->user = 'root';//'rafaueuu_Forteroche';
+        $this->passW = '';//'s9SEhKoz4xHpGX';
+        $this->dbName = 'Forteroche';//'rafaueuu_Forteroche';'root';//
         $this->charset = 'utf8';
 
         try {

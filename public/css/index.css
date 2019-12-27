@@ -146,4 +146,8 @@ p {
   background-color: rgba(234, 236, 239, 0.85);
   border-radius: 20px;
 }
+
+.card {
+  padding: 0;
+}
 /*# sourceMappingURL=index.css.map */

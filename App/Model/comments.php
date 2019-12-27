@@ -25,7 +25,7 @@ class Comments extends DataBase{
         $getId = $conn->prepare("SELECT id_article FROM comentaires WHERE id= :id");
         $getId->execute([':id' => $id]);      
         $chapter = $getId->fetch();
-        header('location: /pro4/chapitre-numero/' . $chapter['id_article']);
+        header('location: /forteroche/chapitre-numero/' . $chapter['id_article']);
         $_SESSION['message'] = "Le commentaire a bien été signalé";
         $_SESSION['msgtype'] = "success";
     }
